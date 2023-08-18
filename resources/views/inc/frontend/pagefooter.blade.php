@@ -37,16 +37,14 @@
                         <h3>Navigation</h3>
                         <div class="nav-footer">
                             <ul>
-                                <li><a href="index.html">Home One</a></li>
-                                <li><a href="properties-right-sidebar.html">Properties Right</a></li>
-                                <li><a href="properties-full-list.html">Properties List</a></li>
+                                <li><a href="{{ url('/') }}">Home</a></li>
+                                <li><a href="{{ url('/list') }}">Properties</a></li>
                                 {{-- <li><a href="properties-details.html">Property Details</a></li>
                                 <li class="no-mgb"><a href="agents-listing-grid.html">Agents Listing</a></li> --}}
                             </ul>
                             <ul class="nav-right">
-                                <li><a href="agent-details.html">Agents Details</a></li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="blog.html">Blog Default</a></li>
+                                <li><a href="{{ url('/about') }}">About Us</a></li>
+                                <li><a href="{{ url('/contact') }}">Contact</a></li>
                                 {{-- <li><a href="blog-details.html">Blog Details</a></li>
                                 <li class="no-mgb"><a href="contact-us.html">Contact Us</a></li> --}}
                             </ul>

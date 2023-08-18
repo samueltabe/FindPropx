@@ -1,6 +1,6 @@
 <footer class="first-footer rec-pro">
     <div class="top-footer">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
                     <div class="netabout">
@@ -36,18 +36,16 @@
                         <h3>Navigation</h3>
                         <div class="nav-footer">
                             <ul>
-                                <li><a href="index.html">Home One</a></li>
-                                <li><a href="properties-right-sidebar.html">Properties Right</a></li>
-                                <li><a href="properties-full-list.html">Properties List</a></li>
-                                <li><a href="properties-details.html">Property Details</a></li>
-                                <li class="no-mgb"><a href="agents-listing-grid.html">Agents Listing</a></li>
+                                <li><a href="{{ url('/') }}">Home</a></li>
+                                <li><a href="{{ url('/list') }}">Properties</a></li>
+                                {{-- <li><a href="properties-details.html">Property Details</a></li>
+                                <li class="no-mgb"><a href="agents-listing-grid.html">Agents Listing</a></li> --}}
                             </ul>
                             <ul class="nav-right">
-                                <li><a href="agent-details.html">Agents Details</a></li>
-                                <li><a href="about.html">About Us</a></li>
-                                <li><a href="blog.html">Blog Default</a></li>
-                                <li><a href="blog-details.html">Blog Details</a></li>
-                                <li class="no-mgb"><a href="contact-us.html">Contact Us</a></li>
+                                <li><a href="{{ url('/about') }}">About Us</a></li>
+                                <li><a href="{{ url('/contact') }}">Contact</a></li>
+                                {{-- <li><a href="blog-details.html">Blog Details</a></li>
+                                <li class="no-mgb"><a href="contact-us.html">Contact Us</a></li> --}}
                             </ul>
                         </div>
                     </div>
@@ -57,24 +55,6 @@
                         <h3>Twitter Feeds</h3>
                         <div class="twitter-widget contuct">
                             <div class="twitter-area">
-                                <div class="single-item">
-                                    <div class="icon-holder">
-                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="text">
-                                        <h5><a href="#">@findhouses</a> all share them with me baby said inspet.</h5>
-                                        <h4>about 5 days ago</h4>
-                                    </div>
-                                </div>
-                                <div class="single-item">
-                                    <div class="icon-holder">
-                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="text">
-                                        <h5><a href="#">@findhouses</a> all share them with me baby said inspet.</h5>
-                                        <h4>about 5 days ago</h4>
-                                    </div>
-                                </div>
                                 <div class="single-item">
                                     <div class="icon-holder">
                                         <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -106,7 +86,7 @@
         </div>
     </div>
     <div class="second-footer rec-pro">
-        <div class="container-fluid sd-f">
+        <div class="container">
             <p>{{ date('Y') }} &copy;&nbsp; {{ config('app.name', 'FindPropx') }}&nbsp; App&nbsp; by&nbsp; <a href="#"> Samtabe</a></p>
             <ul class="netsocials">
                 <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>

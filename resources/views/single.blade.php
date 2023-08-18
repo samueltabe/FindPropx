@@ -1,4 +1,28 @@
 @extends('layouts.pageheader')
+<style>
+    div#social-links {
+        margin: 0px auto;
+        max-width: 100%;
+    }
+    div#social-links ul{
+        margin-left: -40px;
+    }
+    div#social-links ul li {
+        display: inline-block;
+    }
+    div#social-links ul li a {
+        padding: 5px;
+        border: 1px solid #e5dddd;
+        margin: 1px;
+        font-size: 15px;
+        color: #E78C2D;
+        background-color: #e5dddd;
+    }
+    div#social-links ul li a:hover{
+        color: #e5dddd;
+        background-color: #E78C2D;
+    }
+</style>
 @section('content')
 
 <section class="headings">
@@ -112,6 +136,9 @@
                         <div class="blog-info details mb-30">
                             <h5 class="mb-4">Description</h5>
                             <p class="mb-3">{{ $houses->description }}</p>
+                            <h5 class="mb-4">Share this property</h5>
+                            <p class="ml-1"><p>{!! $shareComponent !!}</p></p>
+
                         </div>
                     </div>
                 </div>
@@ -167,6 +194,7 @@
                         </li>
                         @endforeach
                     </ul>
+
                 </div>
                 {{-- <div class="floor-plan property wprt-image-video w50 pro">
                     <h5>Floor Plans</h5>

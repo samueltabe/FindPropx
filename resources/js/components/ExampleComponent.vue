@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <button @click="searchNow()" class="btn btn-primary">Search</button>
+        <button @click="searchAgain()" class="btn btn-primary">Search</button>
         <div class="row justify-content-center">
             <div v-for="property in properties" :key="property.index" class="col-md-4">
                 <div class="card">
@@ -41,6 +41,17 @@
                 }).then((response) => {
                     console.log(response);
                     this.properties = response.data.houses
+                })
+            },
+            searchAgain(){
+                axios({
+                    url: "http://localhost:8000/api/search?key=green",
+                    method: 'get',
+                    // params: { key: 'red'}
+
+                }).then((response) => {
+                    console.log(response);
+                    this.properties = response.data.types
                 })
             }
         },

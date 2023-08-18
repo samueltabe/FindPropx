@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>{{ config('app.name', 'FindPropx') }}</title>
+        <title>{{ config('app.name', 'FindPropx') }} | Your Ultimate Property Market place</title>
         <!-- FAVICON -->
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/images/icons/favicon.ico') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/jquery-ui.css') }}">
@@ -29,6 +29,9 @@
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/maps.css') }}">
         <link rel="stylesheet" id="color" href="{{ asset('frontend/assets/css/colors/pink.css') }}">
+        <!-- Social Sharing -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     </head>
 
     <body class="homepage-9 hp-6 homepage-1 mh">
@@ -49,7 +52,7 @@
             @yield('content')
 
             <!-- START FOOTER -->
-            @include('inc.frontend.pagefooter')
+            @include('inc.frontend.footer')
 
 
             <!-- END FOOTER -->
@@ -125,8 +128,184 @@
             <!-- END PRELOADER -->
 
             <!-- ARCHIVES JS -->
-            
-            <script src="{{ asset('frontend/assets/js/jquery-3.5.1.min.js') }}"></script>
+        <script src="frontend/assets/js/jquery-3.5.1.min.js"></script>
+        <script src="frontend/assets/js/rangeSlider.js"></script>
+        <script src="frontend/assets/js/tether.min.js"></script>
+        <script src="frontend/assets/js/moment.js"></script>
+        <script src="frontend/assets/js/bootstrap.min.js"></script>
+        <script src="frontend/assets/js/mmenu.min.js"></script>
+        <script src="frontend/assets/js/mmenu.js"></script>
+        <script src="frontend/assets/js/aos.js"></script>
+        <script src="frontend/assets/js/aos2.js"></script>
+        <script src="frontend/assets/js/animate.js"></script>
+        <script src="frontend/assets/js/slick.min.js"></script>
+        <script src="frontend/assets/js/fitvids.js"></script>
+        <script src="frontend/assets/js/jquery.waypoints.min.js"></script>
+        <script src="frontend/assets/js/typed.min.js"></script>
+        <script src="frontend/assets/js/jquery.counterup.min.js"></script>
+        <script src="frontend/assets/js/imagesloaded.pkgd.min.js"></script>
+        <script src="frontend/assets/js/isotope.pkgd.min.js"></script>
+        <script src="frontend/assets/js/smooth-scroll.min.js"></script>
+        <script src="frontend/assets/js/lightcase.js"></script>
+        <script src="frontend/assets/js/search.js"></script>
+        <script src="frontend/assets/js/owl.carousel.js"></script>
+        <script src="frontend/assets/js/jquery.magnific-popup.min.js"></script>
+        <script src="frontend/assets/js/ajaxchimp.min.js"></script>
+        <script src="frontend/assets/js/newsletter.js"></script>
+        <script src="frontend/assets/js/jquery.form.js"></script>
+        <script src="frontend/assets/js/jquery.validate.min.js"></script>
+        <script src="frontend/assets/js/searched.js"></script>
+        <script src="frontend/assets/js/forms-2.js"></script>
+        <script src="frontend/assets/js/map-style2.js"></script>
+        <script src="frontend/assets/js/range.js"></script>
+        <script src="frontend/assets/js/color-switcher.js"></script>
+        <script>
+            $(window).on('scroll load', function() {
+                $("#header.cloned #logo img").attr("src", $('#header #logo img').attr('data-sticky-logo'));
+            });
+
+        </script>
+
+        <!-- Slider Revolution scripts -->
+        <script src="frontend/assets/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script src="frontend/assets/revolution/js/jquery.themepunch.revolution.min.js"></script>
+
+        <script>
+            var typed = new Typed('.typed', {
+                strings: ["House ^2000", "Apartment ^2000", "Plaza ^4000"],
+                smartBackspace: false,
+                loop: true,
+                showCursor: true,
+                cursorChar: "|",
+                typeSpeed: 50,
+                backSpeed: 30,
+                startDelay: 800
+            });
+
+        </script>
+
+        <script>
+            $('.slick-lancers').slick({
+                infinite: false,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                dots: true,
+                arrows: false,
+                adaptiveHeight: true,
+                responsive: [{
+                    breakpoint: 1292,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        dots: true,
+                        arrows: false
+                    }
+                }, {
+                    breakpoint: 993,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        dots: true,
+                        arrows: false
+                    }
+                }, {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        dots: true,
+                        arrows: false
+                    }
+                }]
+            });
+
+        </script>
+
+        <script>
+            $('.job_clientSlide').owlCarousel({
+                items: 2,
+                loop: true,
+                margin: 30,
+                autoplay: false,
+                nav: true,
+                smartSpeed: 1000,
+                slideSpeed: 1000,
+                navText: ["<i class='fa fa-chevron-left'></i>", "<i class='fa fa-chevron-right'></i>"],
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    991: {
+                        items: 3
+                    }
+                }
+            });
+
+        </script>
+
+        <script>
+            $('.style2').owlCarousel({
+                loop: true,
+                margin: 0,
+                dots: false,
+                autoWidth: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                responsive: {
+                    0: {
+                        items: 2,
+                        margin: 20
+                    },
+                    400: {
+                        items: 2,
+                        margin: 20
+                    },
+                    500: {
+                        items: 3,
+                        margin: 20
+                    },
+                    768: {
+                        items: 4,
+                        margin: 20
+                    },
+                    992: {
+                        items: 5,
+                        margin: 20
+                    },
+                    1000: {
+                        items: 7,
+                        margin: 20
+                    }
+                }
+            });
+
+        </script>
+
+        <script>
+            $(".dropdown-filter").on('click', function() {
+
+                $(".explore__form-checkbox-list").toggleClass("filter-block");
+
+            });
+
+        </script>
+
+        <!-- MAIN JS -->
+        <script src="frontend/assets/js/script.js"></script>
+
+    </div>
+    <!-- Wrapper / End -->
+</body>
+
+
+<!-- Mirrored from code-theme.com/html/findhouses/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Jul 2023 23:30:12 GMT -->
+</html>
+
+
+            <!-- ARCHIVES JS -->
+
+            {{-- <script src="{{ asset('frontend/assets/js/jquery-3.5.1.min.js') }}"></script>
             <script src="{{ asset('frontend/assets/js/rangeSlider.js') }}"></script>
             <script src="{{ asset('frontend/assets/js/tether.min.js') }}"></script>
             <script src="{{ asset('frontend/assets/js/popper.min.js') }}"></script>
@@ -296,4 +475,4 @@
         </div>
         <!-- Wrapper / End -->
     </body>
-</html>
+</html> --}}

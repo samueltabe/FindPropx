@@ -4,8 +4,8 @@
 <section class="headings">
     <div class="text-heading text-center">
         <div class="container">
-            <h1>Properties Grid View</h1>
-            <h2><a href="{{url('/')}}">Home </a> &nbsp;/&nbsp; Grid View</h2>
+            <h1>Properties</h1>
+            <h2><a href="{{url('/')}}">Home </a> &nbsp;/&nbsp; Properties</h2>
         </div>
     </div>
 </section>
@@ -19,8 +19,7 @@
                         <div class="text-heading text-left">
                             <p><a href="index.html">Home </a> &nbsp;/&nbsp; <span>Listings</span></p>
                         </div>
-                        <h3>Grid View</h3>
-
+                        <h3>Properties</h3>
                     </div>
                 </div>
             </div>
@@ -264,23 +263,7 @@
 
             @endforeach
         </div>
-        <nav aria-label="..." class="pt-3">
-            <ul class="pagination mt-0">
-                <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">Previous</a>
-                </li>
-                <li class="page-item active">
-                    <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
-                </li>
-            </ul>
-        </nav>
+        {{ $houses->links() }}
     </div>
 </section>
 @endsection

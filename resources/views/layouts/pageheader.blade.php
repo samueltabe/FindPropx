@@ -8,7 +8,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="html 5 template">
     <meta name="author" content="">
-    <title>{{ config('app.name', 'FindPropx') }}</title>
+    <title>{{ config('app.name', 'FindPropx') }} | Your Ultimate Property Market place</title>
     <!-- FAVICON -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/images/icons/favicon.ico') }}">
     <!-- GOOGLE FONTS -->

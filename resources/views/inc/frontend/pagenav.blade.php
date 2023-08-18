@@ -18,11 +18,11 @@
             <nav id="navigation" class="style-1">
                 <ul id="responsive">
                     <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="#">View Properties</a>
-                        <ul>
+                    <li><a href="{{ url('/list') }}">View Properties</a>
+                        {{-- <ul>
                             <li><a href="{{ url('/list') }}">Listing Grid</a></li>
                             <li><a href="{{ url('/list2') }}">Listing List</a></li>
-                        </ul>
+                        </ul> --}}
                     <li><a href="{{url('/about')}}">About Us</a></li>
                     <li><a href="{{url('/contact')}}">Contact</a></li>
                 </ul>
@@ -84,6 +84,12 @@
         <div class="main-register fl-wrap">
             <div class="close-reg"><i class="fa fa-times"></i></div>
             <h3>Welcome to <span>Find<strong>Propx</strong></span></h3>
+            <div class="container">
+                <p class="tabs-menu">Whether you're looking to buy, sell, or rent a property, or seeking an excellent
+                    land investment opportunity, Findpropx is here to transform your property
+                    search experience. Join us today and unlock the door to your dream property!
+                </p>
+            </div>
             {{-- <div class="soc-log fl-wrap">
                 <p>Login</p>
                 <a href="#" class="facebook-log"><i class="fa fa-facebook-official"></i>Log in with Facebook</a>

@@ -70,22 +70,28 @@
                     <article class="col-lg-4 col-md-6 col-xs-12 serv" data-aos="fade-up">
                         <div class="serv-flex">
                             <div class="art-1 img-13">
-                                <img src="{{asset('frontend/assets/images/icons/icon-4.svg')}}" alt="">
-                                <h3>Wide Renge Of Properties</h3>
+                                <img src="{{asset('frontend/assets/images/icons/icon-5.svg')}}" alt="">
+                                <h3>User-Friendly Interface</h3>
                             </div>
                             <div class="service-text-p">
-                                <p class="text-center">lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing lacus consectetur Business Directory.</p>
+                                <p class="text-center">
+                                    Our website is designed with simplicity in mind, making it
+                                    easy for anyone to navigate and find their desired property.
+                                </p>
                             </div>
                         </div>
                     </article>
                     <article class="col-lg-4 col-md-6 col-xs-12 serv" data-aos="fade-up">
                         <div class="serv-flex">
                             <div class="art-1 img-14">
-                                <img src="{{asset('frontend/assets/images/icons/icon-5.svg')}}" alt="">
-                                <h3>Trusted by thousands</h3>
+                                <img src="{{asset('frontend/assets/images/icons/icon-4.svg')}}" alt="">
+                                <h3>Extensive Database</h3>
                             </div>
                             <div class="service-text-p">
-                                <p class="text-center">lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing lacus consectetur Business Directory.</p>
+                                <p class="text-center">
+                                    We curate a diverse range of properties and lands, ensuring that you
+                                    have plenty of options to choose from.
+                                </p>
                             </div>
                         </div>
                     </article>
@@ -93,10 +99,12 @@
                         <div class="serv-flex arrow">
                             <div class="art-1 img-15">
                                 <img src="{{asset('frontend/assets/images/icons/icon-6.svg')}}" alt="">
-                                <h3>Financing made easy</h3>
+                                <h3>Secure Transactions</h3>
                             </div>
                             <div class="service-text-p">
-                                <p class="text-center">lorem ipsum dolor sit amet, consectetur pro adipisici consectetur debits adipisicing lacus consectetur Business Directory.</p>
+                                <p class="text-center">
+                                    Findpropx employs advanced encryption and security measures to protect your personal and financial information.
+                                </p>
                             </div>
                         </div>
                     </article>

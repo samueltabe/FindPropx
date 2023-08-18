@@ -7578,6 +7578,10 @@ html input[disabled] {
   background: linear-gradient(-47deg, #e78c2d 0%, #e78c2d 100%);
 }
 
+.hp-6 a.btn.btn-yellow{
+    margin-left: 15px;
+}
+
 .hp-6 a.btn.btn-yellow:hover {
   background: #fff !important;
   color: #e78c2d;
@@ -7616,7 +7620,7 @@ html input[disabled] {
 .hp-6 .rld-main-search .rld-single-select .single-select {
   margin-bottom: 0px;
   border-radius: 8px;
-  margin-right: 15px;
+  margin-left: 75px;
   border: 1px solid #ebebeb;
   -webkit-box-shadow: 0px 0px 0px 8px rgba(255, 255, 255, 0.2);
           box-shadow: 0px 0px 0px 8px rgba(255, 255, 255, 0.2);
@@ -7802,7 +7806,7 @@ html input[disabled] {
 }
 
 .hp-6 .rld-single-input input {
-  width: 255px;
+  width: 200px;
   border: 1px solid #ebebeb;
   margin-right: 15px;
 }

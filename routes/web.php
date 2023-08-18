@@ -13,13 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[App\Http\Controllers\FrontendController::class, 'index'])->name('index');;
+Route::get('/',[App\Http\Controllers\FrontendController::class, 'index'])->name('index');
 Route::get('/list',[App\Http\Controllers\FrontendController::class, 'list']);
 Route::get('/list2',[App\Http\Controllers\FrontendController::class, 'list2']);
-Route::get('/single/{id}',[App\Http\Controllers\FrontendController::class, 'single']);
+Route::get('/single/{id}',[App\Http\Controllers\FrontendController::class, 'single'])->name('house.show');
 Route::get('/about',[App\Http\Controllers\FrontendController::class, 'about']);
 Route::get('/contact',[App\Http\Controllers\FrontendController::class, 'contact']);
 Route::get('/state',[App\Http\Controllers\FrontendController::class, 'state']);
+Route::get('/share', [App\Http\Controllers\SocialShareButtonsController::class,'ShareWidget']);
 
 // Route::get('/', function () {
 //     return view('welcome');
