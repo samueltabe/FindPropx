@@ -14,4 +14,4 @@ jobs:
         server: ftp.chrisagu.info
         username: laravel@laravel.chrisagu.info
         password: 3Qy!d}L7NRgq
-        server-dir: public_html/laravel
+        server-dir: public_html/laravel/
