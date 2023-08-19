@@ -23,7 +23,7 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
-        server: ftp.samtech.org.ng
-        username: tabi@samtech.org.ng
-        password: 390.ur%Tnd_5
-        server-dir: /
+        server: ftp.chrisagu.info
+        username: test@laravel.chrisagu.info
+        password: ?cT8HpkA%VZ8
+        server-dir: /laravel.chrisagu.info
