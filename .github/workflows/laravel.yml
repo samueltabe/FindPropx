@@ -7,6 +7,18 @@ jobs:
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v2.3.2
+    - uses: actions/setup-node@master
+    - name: Copy .env
+      run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+    - name: Install Dependencies
+      run: composer update --ignore-platform-regs
+    - name: Generate key
+      run: php artisan key:generate
+    - name: Generate storage link
+      run: php artisan storage:link
+    - name: Directory Permission
+      run: chmod -R 777 storage bootstrap/cache
+
 
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -14,4 +26,4 @@ jobs:
         server: ftp.chrisagu.info
         username: laravel@laravel.chrisagu.info
         password: 3Qy!d}L7NRgq
-        server-dir: /public_html/laravel/
+        server-dir: /public_html/laravel.chrisagu.info/
