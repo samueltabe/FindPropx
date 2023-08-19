@@ -26,4 +26,4 @@ jobs:
         server: ftp.samtech.org.ng
         username: git@samtech.org.ng
         password: v[383x6K*NqM
-        server-dir: /public_html/samtech.org.ng/
+        server-dir: /
