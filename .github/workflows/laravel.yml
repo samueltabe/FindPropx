@@ -25,5 +25,5 @@ jobs:
       with:
         server: ftp.chrisagu.info
         username: test@laravel.chrisagu.info
-        password: ?cT8HpkA%VZ8
+        password: cT8HpkA%VZ8
         server-dir: /laravel.chrisagu.info/
