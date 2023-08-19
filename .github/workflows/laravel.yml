@@ -24,6 +24,6 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
       with:
         server: ftp.chrisagu.info
-        username: test@laravel.chrisagu.info
-        password: cT8HpkA%VZ8
-        server-dir: /laravel.chrisagu.info/
+        username: time@laravel.chrisagu.info
+        password: 78y0jTc2bKb!
+        server-dir: /public_html/laravel.chrisagu.info/
