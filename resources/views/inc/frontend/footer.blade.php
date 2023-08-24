@@ -1,100 +1,104 @@
-<footer class="first-footer rec-pro">
-    <div class="top-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="netabout">
-                        <a href="/" class="logo">
-                            <img src="{{ asset('frontend/assets/images/logo1.png') }}" width="50" alt="netcom">
-                        </a>
-                    </div>
-                    <div class="contactus">
-                        <ul>
-                            <li>
-                                <div class="info">
-                                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <p class="in-p">95 South Park Avenue, USA</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="info">
-                                    <i class="fa fa-phone" aria-hidden="true"></i>
-                                    <p class="in-p">+456 875 369 208</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="info">
-                                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                                    <p class="in-p ti">support@findhouses.com</p>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="navigation">
-                        <h3>Navigation</h3>
-                        <div class="nav-footer">
-                            <ul>
-                                <li><a href="{{ url('/') }}">Home</a></li>
-                                <li><a href="{{ url('/list') }}">Properties</a></li>
-                                {{-- <li><a href="properties-details.html">Property Details</a></li>
-                                <li class="no-mgb"><a href="agents-listing-grid.html">Agents Listing</a></li> --}}
-                            </ul>
-                            <ul class="nav-right">
-                                <li><a href="{{ url('/about') }}">About Us</a></li>
-                                <li><a href="{{ url('/contact') }}">Contact</a></li>
-                                {{-- <li><a href="blog-details.html">Blog Details</a></li>
-                                <li class="no-mgb"><a href="contact-us.html">Contact Us</a></li> --}}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="widget">
-                        <h3>Twitter Feeds</h3>
-                        <div class="twitter-widget contuct">
-                            <div class="twitter-area">
-                                <div class="single-item">
-                                    <div class="icon-holder">
-                                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="text">
-                                        <h5><a href="#">@findhouses</a> all share them with me baby said inspet.</h5>
-                                        <h4>about 5 days ago</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="newsletters">
-                        <h3>Newsletters</h3>
-                        <p>Sign Up for Our Newsletter to get Latest Updates and Offers. Subscribe to receive news in your inbox.</p>
-                    </div>
-                    <form class="bloq-email mailchimp form-inline" method="post">
-                        <label for="subscribeEmail" class="error"></label>
-                        <div class="email">
-                            <input type="email" id="subscribeEmail" name="EMAIL" placeholder="Enter Your Email">
-                            <input type="submit" value="Subscribe">
-                            <p class="subscription-success"></p>
-                        </div>
-                    </form>
-                </div>
-            </div>
+  <!--=================================
+  newsletter -->
+  <section class="py-5 bg-primary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5">
+          <h3 class="text-white mb-0">Sign up to our newsletter to get the latest news and offers.</h3>
         </div>
+        <div class="col-md-7 mt-3 mt-md-0">
+          <div class="newsletter">
+            <form>
+              <div class="mb-0">
+                <input type="email" class="form-control" placeholder="Enter email">
+              </div>
+              <button type="submit" class="btn btn-dark b-radius-left-none">Get notified</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="second-footer rec-pro">
-        <div class="container">
-            <p>{{ date('Y') }} &copy;&nbsp; {{ config('app.name', 'FindPropx') }}&nbsp; App&nbsp; by&nbsp; <a href="#"> Samtabe</a></p>
-            <ul class="netsocials">
-                <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+  </section>
+  <!--=================================
+  newsletter -->
+
+<footer class="footer bg-dark space-pt">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-contact-info">
+            <h5 class="text-primary mb-4">About real villa</h5>
+            <p class="text-white mb-4">Real Villa helped thousands of clients to find the right property for their needs.</p>
+            <ul class="list-unstyled mb-0">
+              <li> <b> <i class="fas fa-map-marker-alt"></i></b><span>214 West Arnold St. New York, NY 10002</span> </li>
+              <li> <b><i class="fas fa-microphone-alt"></i></b><span>(123) 345-6789</span> </li>
+              <li> <b><i class="fas fa-headset"></i></b><span>support@realvilla.demo</span> </li>
             </ul>
+          </div>
         </div>
+        <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+          <div class="footer-link">
+            <h5 class="text-primary mb-4">Useful links</h5>
+            <ul class="list-unstyled mb-0">
+              <li> <a href="#">Commercial </a> </li>
+              <li> <a href="#">House </a> </li>
+              <li> <a href="#">Office </a> </li>
+              <li> <a href="#">Residential </a> </li>
+              <li> <a href="#">Residential Tower </a> </li>
+            </ul>
+            <ul class="list-unstyled mb-0">
+              <li> <a href="#">Beverly Hills </a> </li>
+              <li> <a href="#">Los angeles </a> </li>
+              <li> <a href="#">Mission Viejo </a> </li>
+              <li> <a href="#">Newport  </a> </li>
+              <li> <a href="#">Beach Pasadena </a> </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+          <div class="footer-recent-List">
+            <h5 class="text-primary mb-4">Recently listed properties</h5>
+            <ul class="list-unstyled mb-0">
+              <li>
+                <div class="footer-recent-list-item">
+                  <img class="img-fluid" src="images/property/list/01.jpg" alt="">
+                  <div class="footer-recent-list-item-info">
+                    <h6 class="text-white"><a class="category font-md mb-2" href="property-detail-style-01.html">Awesome family home</a></h6>
+                    <a class="address mb-2 font-sm" href="#">Vermont dr. hephzibah</a>
+                    <span class="price text-white">$3,456,235 </span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+          <h5 class="text-primary mb-4">Subscribe us</h5>
+          <div class="footer-subscribe">
+            <p class="text-white">Sign up to our newsletter to get the latest news and offers.</p>
+            <form>
+              <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Enter email">
+              </div>
+              <button type="submit" class="btn btn-primary btn-sm">Get notified</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-</footer>
-<a data-scroll href="#wrapper" class="go-up"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-4 text-center text-md-start">
+
+          </div>
+          <div class="col-md-4 text-center my-3 mt-md-0 mb-md-0">
+            <a id="back-to-top" class="back-to-top" href="#"><i class="fas fa-angle-double-up"></i> </a>
+          </div>
+          <div class="col-md-4 text-center text-md-end">
+            <p class="mb-0 text-white"> &copy;Copyright <span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> FindPropx by <a href="#"> Samuel Tabe </a> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>

@@ -14,11 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[App\Http\Controllers\FrontendController::class, 'index'])->name('index');
-Route::get('/list',[App\Http\Controllers\FrontendController::class, 'list']);
+Route::get('/list',[App\Http\Controllers\FrontendController::class, 'list'])->name('list');
 Route::get('/list2',[App\Http\Controllers\FrontendController::class, 'list2']);
 Route::get('/single/{id}',[App\Http\Controllers\FrontendController::class, 'single'])->name('house.show');
-Route::get('/about',[App\Http\Controllers\FrontendController::class, 'about']);
-Route::get('/contact',[App\Http\Controllers\FrontendController::class, 'contact']);
+Route::get('/about',[App\Http\Controllers\FrontendController::class, 'about'])->name('about');
+Route::get('/service',[App\Http\Controllers\FrontendController::class, 'service'])->name('service');
+Route::get('/contact',[App\Http\Controllers\FrontendController::class, 'contact'])->name('contact');
+Route::get('/coming',[App\Http\Controllers\FrontendController::class, 'coming']);
 Route::get('/state',[App\Http\Controllers\FrontendController::class, 'state']);
 Route::get('/share', [App\Http\Controllers\SocialShareButtonsController::class,'ShareWidget']);
 

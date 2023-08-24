@@ -1,272 +1,344 @@
-@extends('layouts.pageheader')
-
+@extends('layouts.frontend')
 @section('content')
-<section class="headings">
-    <div class="text-heading text-center">
-        <div class="container">
-            <h1>Properties</h1>
-            <h2><a href="{{url('/')}}">Home </a> &nbsp;/&nbsp; Properties</h2>
-        </div>
-    </div>
-</section>
 
-<section class="properties-list featured portfolio blog">
+<!--header -->
+<header class="header">
+    @include('inc.frontend.navpages')
+</header>
+<!--header -->
+<!--Modal login -->
+@include('inc.frontend.modal')
+<!--Modal login -->
+
+<!--=================================
+header -->
+
+<!--=================================
+breadcrumb -->
+<div class="bg-light">
     <div class="container">
-        <section class="headings-2 pt-0 pb-0">
-            <div class="pro-wrapper">
-                <div class="detail-wrapper-body">
-                    <div class="listing-title-bar">
-                        <div class="text-heading text-left">
-                            <p><a href="index.html">Home </a> &nbsp;/&nbsp; <span>Listings</span></p>
-                        </div>
-                        <h3>Properties</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <example-component></example-component>
-        <!-- Search Form -->
-        <div class="col-12 px-0 parallax-searchs">
-            <div class="banner-search-wrap">
-                <div class="tab-content">
-                    <div class="tab-pane fade show active" id="tabs_1">
-                        <div class="rld-main-search">
-                            <div class="row">
-                                <div class="rld-single-input">
-                                    <input type="text" placeholder="Enter Keyword...">
-                                </div>
-                                <div class="rld-single-select ml-22">
-                                    <select class="select single-select">
-                                        <option value="1">Property Type</option>
-                                        <option value="2">Family House</option>
-                                        <option value="3">Apartment</option>
-                                        <option value="3">Condo</option>
-                                    </select>
-                                </div>
-                                <div class="rld-single-select">
-                                    <select class="select single-select mr-0">
-                                        <option value="1">Location</option>
-                                        <option value="2">Los Angeles</option>
-                                        <option value="3">Chicago</option>
-                                        <option value="3">Philadelphia</option>
-                                        <option value="3">San Francisco</option>
-                                        <option value="3">Miami</option>
-                                        <option value="3">Houston</option>
-                                    </select>
-                                </div>
-                                <div class="dropdown-filter"><span>Advanced Search</span></div>
-                                <div class="col-xl-2 col-lg-2 col-md-4 pl-0">
-                                    <a class="btn btn-yellow" href="#">Search Now</a>
-                                </div>
-                                <div class="explore__form-checkbox-list full-filter">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 py-1 pr-30 pl-0">
-                                            <!-- Form Property Status -->
-                                            <div class="form-group categories">
-                                                <div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-home"></i>Property Status</span>
-                                                    <ul class="list">
-                                                        <li data-value="1" class="option selected ">For Sale</li>
-                                                        <li data-value="2" class="option">For Rent</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!--/ End Form Property Status -->
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 py-1 pr-30 pl-0 ">
-                                            <!-- Form Bedrooms -->
-                                            <div class="form-group beds">
-                                                <div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-bed" aria-hidden="true"></i> Bedrooms</span>
-                                                    <ul class="list">
-                                                        <li data-value="1" class="option selected">1</li>
-                                                        <li data-value="2" class="option">2</li>
-                                                        <li data-value="3" class="option">3</li>
-                                                        <li data-value="3" class="option">4</li>
-                                                        <li data-value="3" class="option">5</li>
-                                                        <li data-value="3" class="option">6</li>
-                                                        <li data-value="3" class="option">7</li>
-                                                        <li data-value="3" class="option">8</li>
-                                                        <li data-value="3" class="option">9</li>
-                                                        <li data-value="3" class="option">10</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!--/ End Form Bedrooms -->
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 py-1 pl-0 pr-0">
-                                            <!-- Form Bathrooms -->
-                                            <div class="form-group bath">
-                                                <div class="nice-select form-control wide" tabindex="0"><span class="current"><i class="fa fa-bath" aria-hidden="true"></i> Bathrooms</span>
-                                                    <ul class="list">
-                                                        <li data-value="1" class="option selected">1</li>
-                                                        <li data-value="2" class="option">2</li>
-                                                        <li data-value="3" class="option">3</li>
-                                                        <li data-value="3" class="option">4</li>
-                                                        <li data-value="3" class="option">5</li>
-                                                        <li data-value="3" class="option">6</li>
-                                                        <li data-value="3" class="option">7</li>
-                                                        <li data-value="3" class="option">8</li>
-                                                        <li data-value="3" class="option">9</li>
-                                                        <li data-value="3" class="option">10</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <!--/ End Form Bathrooms -->
-                                        </div>
-                                        <div class="col-lg-5 col-md-12 col-sm-12 py-1 pr-30 mr-5 sld">
-                                            <!-- Price Fields -->
-                                            <div class="main-search-field-2">
-                                                <!-- Area Range -->
-                                                <div class="range-slider">
-                                                    <label>Area Size</label>
-                                                    <div id="area-range" data-min="0" data-max="1300" data-unit="sq ft"></div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                                <br>
-                                                <!-- Price Range -->
-                                                <div class="range-slider">
-                                                    <label>Price Range</label>
-                                                    <div id="price-range" data-min="0" data-max="600000" data-unit="$"></div>
-                                                    <div class="clearfix"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 py-1 pr-30">
-                                            <!-- Checkboxes -->
-                                            <div class="checkboxes one-in-row margin-bottom-10 ch-1">
-                                                <input id="check-2" type="checkbox" name="check">
-                                                <label for="check-2">Air Conditioning</label>
-                                                <input id="check-3" type="checkbox" name="check">
-                                                <label for="check-3">Swimming Pool</label>
-                                                <input id="check-4" type="checkbox" name="check">
-                                                <label for="check-4">Central Heating</label>
-                                                <input id="check-5" type="checkbox" name="check">
-                                                <label for="check-5">Laundry Room</label>
-                                                <input id="check-6" type="checkbox" name="check">
-                                                <label for="check-6">Gym</label>
-                                                <input id="check-7" type="checkbox" name="check">
-                                                <label for="check-7">Alarm</label>
-                                                <input id="check-8" type="checkbox" name="check">
-                                                <label for="check-8">Window Covering</label>
-                                            </div>
-                                            <!-- Checkboxes / End -->
-                                        </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 py-1 pr-30">
-                                            <!-- Checkboxes -->
-                                            <div class="checkboxes one-in-row margin-bottom-10 ch-2">
-                                                <input id="check-9" type="checkbox" name="check">
-                                                <label for="check-9">WiFi</label>
-                                                <input id="check-10" type="checkbox" name="check">
-                                                <label for="check-10">TV Cable</label>
-                                                <input id="check-11" type="checkbox" name="check">
-                                                <label for="check-11">Dryer</label>
-                                                <input id="check-12" type="checkbox" name="check">
-                                                <label for="check-12">Microwave</label>
-                                                <input id="check-13" type="checkbox" name="check">
-                                                <label for="check-13">Washer</label>
-                                                <input id="check-14" type="checkbox" name="check">
-                                                <label for="check-14">Refrigerator</label>
-                                                <input id="check-15" type="checkbox" name="check">
-                                                <label for="check-15">Outdoor Shower</label>
-                                            </div>
-                                            <!-- Checkboxes / End -->
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="row">
+        <div class="col-12">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="{{ url('/') }}"> <i class="fas fa-home"></i> </a></li>
+            <li class="breadcrumb-item"> <i class="fas fa-chevron-right"></i> <a href="{{ url('/list') }}">All Properties</a></li>
+            <li class="breadcrumb-item active"> <i class="fas fa-chevron-right"></i> <span> Property </span></li>
+          </ol>
         </div>
-        <!--/ End Search Form -->
-        <section class="headings-2 pt-0">
-            <div class="pro-wrapper">
-                <div class="detail-wrapper-body">
-                    <div class="listing-title-bar">
-                        <div class="text-heading text-left">
-                            <p class="font-weight-bold mb-0 mt-3">9 Search results</p>
-                        </div>
-                    </div>
+      </div>
+    </div>
+  </div>
+  <!--=================================
+  breadcrumb -->
+
+  <!--=================================
+  Listing – grid view -->
+  <section class="space-ptb">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="section-title mb-3 mb-lg-4">
+            {{-- <h2><span class="text-primary">156</span> Results</h2> --}}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="property-filter-tag">
+            <ul class="list-unstyled">
+              <li><a href="{{ url('/list') }}">Refresh <i class="fas fa-redo-alt"></i> </a></li>
+              {{-- <li><a class="filter-clear" href="{{ url('/list') }}">Reset Search <i class="fas fa-redo-alt"></i> </a></li> --}}
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 mb-5 mb-lg-0">
+          <div class="sidebar">
+            {{-- <div class="widget">
+              <div class="widget-title widget-collapse">
+                <h6>Advanced filter</h6>
+                <a class="ms-auto" data-bs-toggle="collapse" href="#filter-property" role="button" aria-expanded="false" aria-controls="filter-property"> <i class="fas fa-chevron-down"></i> </a>
+              </div>
+              <div class="collapse show" id="filter-property">
+                <form class="mt-3">
+                  <div class="mb-2 select-border">
+                    <select class="form-control basic-select" id="typeFilter">
+                        <option value="">All States</option>
+                        @foreach ($states as $ty)
+                            <option value="{{ $ty->id }}">{{ $ty->name }}</option>
+                        @endforeach
+                    </select>
+                  </div>
+                  <div class="mb-2 select-border">
+                    <select class="form-control basic-select">
+                      <option>For Rent</option>
+                      <option>For Sale</option>
+                    </select>
+                  </div>
+                  <div class="mb-2 select-border">
+                    <select class="form-control basic-select">
+                      <option>Distance from location</option>
+                      <option>Within 1 mile</option>
+                      <option>Within 3 miles</option>
+                      <option>Within 5 miles</option>
+                      <option>Within 10 miles</option>
+                      <option>Within 15 miles</option>
+                      <option>Within 30 miles</option>
+                    </select>
+                  </div>
+                  <div class="mb-2 select-border">
+                    <select class="form-control basic-select">
+                      <option>Bedrooms</option>
+                      <option>01</option>
+                      <option>02</option>
+                      <option>03</option>
+                    </select>
+                  </div>
+                  <div class="mb-2 select-border">
+                    <select class="form-control basic-select">
+                      <option>Sort by</option>
+                      <option>Most popular</option>
+                      <option>Highest price</option>
+                      <option>Lowest price</option>
+                      <option>Most reduced</option>
+                    </select>
+                  </div>
+                  <div class="mb-2 select-border">
+                    <select class="form-control basic-select">
+                      <option>Select Floor</option>
+                      <option>01</option>
+                      <option>02</option>
+                      <option>03</option>
+                    </select>
+                  </div>
+                  <div class="mb-2">
+                    <input class="form-control" placeholder="Type (sq ft)">
+                  </div>
+                  <div class="mb-2">
+                    <input class="form-control" placeholder="Type (sq ft)">
+                  </div>
+                   <div class="mb-3 property-price-slider mt-3">
+                    <label class="form-label">Select Price Range</label>
+                    <input type="text" id="property-price-slider" name="example_name" value="" />
+                  </div>
+                  <div class="d-grid mb-2">
+                    <button class="btn btn-primary align-items-center" type="submit"><i class="fas fa-filter me-1"></i><span>Filter</span></button>
+                  </div>
+                </form>
+              </div>
+            </div> --}}
+            <div class="widget">
+              <div class="widget-title widget-collapse">
+                <h6>Filter Properties By Status</h6>
+                <a class="ms-auto" data-bs-toggle="collapse" href="#status-property" role="button" aria-expanded="false" aria-controls="status-property"> <i class="fas fa-chevron-down"></i> </a>
+              </div>
+              <div class="collapse show" id="status-property">
+                <ul class="list-unstyled mb-0 pt-3">
+                  <li><a href="{{ url('/list') }}">All Status<span class="ms-auto"></span></a></li>
+                  @foreach ($status as $st )
+                  <li><a href="{{ url('/list') }}?status_id={{ $st->id }}">{{ $st->name }}
+                    <span class="ms-auto">({{ $st->statusCount->count() }} ads)</span>
+                  </a></li>
+                  @endforeach
+                </ul>
+              </div>
+            </div>
+            <div class="widget">
+              <div class="widget-title widget-collapse">
+                <h6>Filter Properties By Types</h6>
+                <a class="ms-auto" data-bs-toggle="collapse" href="#type-property" role="button" aria-expanded="false" aria-controls="type-property"> <i class="fas fa-chevron-down"></i> </a>
+              </div>
+              <div class="collapse show" id="type-property">
+                <ul class="list-unstyled mb-0 pt-3">
+                  <li><a href="{{ url('/list') }}">All Types<span class="ms-auto">({{ $totalHouses }})</span></a></li>
+                    @foreach ($types as $ty)
+                        <li><a href="{{ url('/list') }}?type_id={{ $ty->id }}">{{ $ty->name }}
+                            <span class="ms-auto">
+                                ({{ $ty->typeCount->count() }} ads)
+                            </span>
+                        </a></li>
+                    @endforeach
+                </ul>
+              </div>
+            </div>
+            {{-- <div class="widget">
+              <div class="widget-title">
+                <h6>Mortgage calculator</h6>
+              </div>
+              <form>
+                <div class="mb-2">
+                  <div class="input-group input-group-box">
+                    <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                    <input type="text" class="form-control" placeholder="Total Amount">
+                   </div>
                 </div>
-                <div class="cod-pad single detail-wrapper mr-2 mt-0 d-flex justify-content-md-end align-items-center">
-                    <div class="input-group border rounded input-group-lg w-auto mr-4">
-                        <label class="input-group-text bg-transparent border-0 text-uppercase letter-spacing-093 pr-1 pl-3" for="inputGroupSelect01"><i class="fas fa-align-left fs-16 pr-2"></i>Sortby:</label>
-                        <select class="form-control border-0 bg-transparent shadow-none p-0 selectpicker sortby" data-style="bg-transparent border-0 font-weight-600 btn-lg pl-0 pr-3" id="inputGroupSelect01" name="sortby">
-                            <option selected>Top Selling</option>
-                            <option value="1">Most Viewed</option>
-                            <option value="2">Price(low to high)</option>
-                            <option value="3">Price(high to low)</option>
+                <div class="mb-2">
+                  <div class="input-group input-group-box">
+                    <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                    <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Down Payment">
+                  </div>
+                </div>
+                <div class="mb-2">
+                  <div class="input-group input-group-box">
+                    <span class="input-group-text"><i class="fas fa-percent"></i></span>
+                    <input type="text" class="form-control" placeholder="Interest Rate">
+                   </div>
+                </div>
+                <div class="mb-2">
+                  <div class="input-group input-group-box">
+                    <span class="input-group-text"><i class="far fa-clock"></i></span>
+                    <input type="text" class="form-control" placeholder="Loan Term (Years)">
+                  </div>
+                </div>
+                <div class="mb-3 select-border">
+                  <select class="form-control basic-select">
+                    <option>Monthly</option>
+                    <option>Weekly</option>
+                    <option>Yearly</option>
+                  </select>
+                </div>
+                <a class="btn btn-primary d-grid" href="#">Calculate</a>
+              </form>
+            </div> --}}
+            <div class="widget">
+              <div class="widget-title">
+                <h6>Recently listed properties</h6>
+              </div>
+              @foreach ($recent as $re )
+              <div class="recent-list-item">
+                <img class="img-fluid" src="/{{ $re->images[0]->img_url?? 'no image' }}" style="width: 100px" alt="">
+                <div class="recent-list-item-info">
+                  <a class="address mb-2" href="property-detail-style-01.html">{{ $re->title }}</a>
+                  <span class="text-primary">₦{{ $re->price }} </span>
+                </div>
+              </div>
+              @endforeach
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <div class="property-filter d-sm-flex">
+            <ul class="property-short list-unstyled d-sm-flex mb-0">
+              <li>
+                <form class="form-inline">
+                  <div class="d-lg-flex d-block mb-sm-0 mb-3">
+                    <label class="justify-content-start mb-2 mb-sm-0">Short by: Locations</label>
+                    <div class="short-by">
+                        <select class="form-control basic-select" id="typeFilters">
+                            <option>All States</option>
+                            @foreach ($states as $ty)
+                                <option value="{{ $ty->id }}">{{ $ty->name }}</option>
+                            @endforeach
                         </select>
                     </div>
-                    <div class="sorting-options">
-                        <a href="{{url('/list2')}}" class="change-view-btn lde"><i class="fa fa-th-list"></i></a>
-                        <a href="{{url('/list')}}" class="change-view-btn active-view-btn"><i class="fa fa-th-large"></i></a>
+                  </div>
+                </form>
+              </li>
+            </ul>
+            <ul class="property-view-list list-unstyled d-flex mb-0">
+              <li>
+                <form class="form-inline">
+                  <div class="d-lg-flex d-block mb-3 mb-sm-0">
+                    <label class="justify-content-start pe-2 mb-2 mb-sm-0"> </label>
+                    <div class="short-by">
+                        <select class="form-control basic-select" id="typeFilterss">
+                            <option>All Local Govt Areas</option>
+                            @foreach ($lgas as $ty)
+                                <option value="{{ $ty->id }}">{{ $ty->local_name }}</option>
+                            @endforeach
+                        </select>
                     </div>
-                </div>
-            </div>
-        </section>
-        <div class="row">
+                  </div>
+                </form>
+              </li>
+              {{-- <li><a href="index-half-map.html"><i class="fas fa-map-marker-alt fa-lg"></i></a></li>
+              <li><a class="property-list-icon" href="property-list.html">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a></li>
+              <li><a class="property-grid-icon active" href="property-grid.html">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a></li> --}}
+            </ul>
+          </div>
+          <div class="row mt-4">
             @foreach ($houses as $house)
-            <div class="item col-lg-4 col-md-6 col-xs-12 landscapes sale">
-                <div class="project-single" data-aos="fade-up">
-                    <div class="project-inner project-head">
-                        <div class="homes">
-                            <a href="{{ url('single/'.$house->id) }}" class="homes-img">
-                                <div class="homes-tag button alt featured">Featured</div>
-                                <div class="homes-tag button alt sale">{{ $house->status->name ?? '' }}</div>
-                                <img src="/{{ $house->images[0]->img_url?? 'no image' }}" alt="home-1" class="img-responsive" style="height: 300px">
-                            </a>
-                        </div>
-                        <div class="button-effect">
-                            <a href="{{ url('single/'.$house->id) }}" class="btn"><i class="fa fa-link"></i></a>
-                            <a href="{{ $house->video }}" class="btn popup-video popup-youtube"><i class="fas fa-video"></i></a>
-                            <a href="{{ url('single/'.$house->id) }}" class="img-poppu btn"><i class="fa fa-photo"></i></a>
-                        </div>
+            <div class="col-sm-6">
+              <div class="property-item">
+                <div class="property-image bg-overlay-gradient-04">
+                  <img class="img-fluid" src="/{{ $house->images[0]->img_url?? 'no image' }}" style="height: 300px" alt="">
+                  <div class="property-lable">
+                    <span class="badge badge-md bg-primary">{{ $house->types->name ?? '' }}</span>
+                    <span class="badge badge-md bg-info">{{ $house->status->name ?? '' }} </span>
+                  </div>
+                  <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
+                  <div class="property-agent">
+                    <div class="property-agent-image">
+                      <img class="img-fluid" src="{{ asset('upload/admin-dp/'.$house->users->image)?? '' }}" alt="">
                     </div>
-                    <!-- homes content -->
-                    <div class="homes-content">
-                        <!-- homes address -->
-                        <h3><a href="single-property-1.html">{{ $house->title }}</a></h3>
-                        <p class="homes-address mb-3">
-                            <a href="single-property-1.html">
-                                <i class="fa fa-map-marker"></i><span>{{ $house->lgas->local_name }}, {{ $house->states->name }}</span>
-                            </a>
-                        </p>
-                        <!-- homes List -->
-                        <ul class="homes-list clearfix pb-3">
-                            <li class="the-icons">
-                                <i class="flaticon-bed mr-2" aria-hidden="true"></i>
-                                <span>6 Bedrooms</span>
-                            </li>
-                            <li class="the-icons">
-                                <i class="flaticon-bathtub mr-2" aria-hidden="true"></i>
-                                <span>3 Bathrooms</span>
-                            </li>
-                            <li class="the-icons">
-                                <i class="flaticon-square mr-2" aria-hidden="true"></i>
-                                <span>720 sq ft</span>
-                            </li>
-                            <li class="the-icons">
-                                <i class="flaticon-car mr-2" aria-hidden="true"></i>
-                                <span>2 Garages</span>
-                            </li>
-                        </ul>
-                        {{-- <div class="footer">
-                            <a href="agent-details.html">
-                                <img src="images/testimonials/ts-1.jpg" alt="" class="mr-2"> Lisa Jhonson
-                            </a>
-                            <span>2 months ago</span>
-                        </div> --}}
+                    <div class="property-agent-info">
+                      <a class="property-agent-name" href="#">{{$house->users->name}}</a>
+                      <span class="d-block">Company Agent</span>
+                      <ul class="property-agent-contact list-unstyled">
+                        @php
+                        $phoneNumber = preg_replace('/[^0-9]/', '', $house->users->phone);
+                        @endphp
+                        <li><a href="tel:{{ $phoneNumber }}"><i class="fas fa-mobile-alt"></i> </a></li>
+                        <li><a href="mailto:{{ $house->users->email }}"><i class="fas fa-envelope"></i> </a></li>
+                      </ul>
                     </div>
+                  </div>
+                  <div class="property-agent-popup">
+                    <a href="#"><i class="fas fa-camera"></i> 06</a>
+                  </div>
                 </div>
+                <div class="property-details">
+                  <div class="property-details-inner">
+                    <h5 class="property-title"><a href="{{ url('single/'.$house->id) }}">{{ $house->title }} </a></h5>
+                    <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>{{ $house->lgas->local_name }},&nbsp{{  $house->states->name }}</span>
+                    <span class="property-agent-date"><i class="far fa-clock fa-md"></i>{{$house->created_at->diffForHumans()}}</span>
+                    <div class="property-price">₦{{ $house->price }}<span> / month</span> </div>
+                    <ul class="property-info list-unstyled d-flex">
+                      <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Rooms<span>{{ $house->rooms }}</span></li>
+                      <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
+                      <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>{{ $house->area }}</span></li>
+                    </ul>
+                  </div>
+                  <div class="property-btn">
+                    <a class="property-link" href="{{ url('single/'.$house->id) }}">See Details</a>
+                    <ul class="property-listing-actions list-unstyled mb-0">
+                      <li class="property-compare"><a data-bs-toggle="tooltip" data-placement="top" title="Compare" href="#"><i class="fas fa-exchange-alt"></i></a></li>
+                      <li class="property-favourites"><a data-bs-toggle="tooltip" data-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
-
             @endforeach
+          </div>
+          {{-- paginate section --}}
+          <div class="row">
+            <div class="col-12">
+              <ul class="pagination mt-3">
+                <li class="page-item disabled me-auto">
+                  {{-- <span class="page-link b-radius-none">Prev</span> --}}
+                </li>
+                {{ $houses->links() }}
+                <li class="page-item ms-auto">
+                  {{-- <a class="page-link b-radius-none" href="#">Next</a> --}}
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        {{ $houses->links() }}
+      </div>
     </div>
-</section>
+  </section>
+  <!--=================================
+  Listing – grid view -->
+
+
 @endsection
-
-
 

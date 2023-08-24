@@ -26,4 +26,4 @@ jobs:
         server: ftp.chrisagu.info
         username: time@laravel.chrisagu.info
         password: 78y0jTc2bKb!
-        server-dir: /public_html/laravel.chrisagu.info/
+        server-dir: /laravel.chrisagu.info/

@@ -10,4 +10,9 @@ class Status extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function statusCount()
+    {
+        return $this->hasMany(House::class, 'status_id', 'id');
+    }
 }
