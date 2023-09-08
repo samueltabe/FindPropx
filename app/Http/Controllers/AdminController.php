@@ -321,15 +321,14 @@ class AdminController extends Controller
         return view('admin.users.index', compact('users', 'user'));
     }
 
-    public function toggleVerification(Request $request)
+    public function toggleVerification($id)
     {
-        $user = User::findOrFail($request->user_id);
+        $user = User::findOrFail($id);
         $user->update([
-            // $user->verified=$req->verified,
             'verified' => !$user->verified,
         ]);
 
-        return redirect()->back()->compact('user'); // Redirect back to the user list page
+        return redirect()->back()->with('user', $user);
     }
 
 

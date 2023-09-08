@@ -16,6 +16,12 @@ class House extends Model
         return $this->belongsTo('App\Models\User', 'user_id', 'id');
     }
 
+    //     public function users()
+    // {
+    //     return $this->belongsTo(User::class)?? 'Default Value';
+    // }
+
+
     public function status()
     {
         return $this->belongsTo('App\Models\Status', 'status_id', 'id');

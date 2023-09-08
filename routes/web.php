@@ -86,12 +86,14 @@ Route::group(['middleware'=>['auth', 'isAdmin']],function(){
     Route::get('/admin/status/create', [App\Http\Controllers\AdminController::class, 'StatusCreate']);
     Route::post('/admin/status/add', [App\Http\Controllers\AdminController::class, 'StatusAdd']);
 
-    Route::get('/admin/usersx', [App\Http\Controllers\AdminController::class, 'users']);
-    Route::post('/admin/update-agent', function(){ return 123; });
+    Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'users']);
+    Route::post('/admin/update-agent/{id}', [App\Http\Controllers\AdminController::class, 'toggleVerification'])->name('admin.update.agent');
+
+    // Route::get('/admin/update-agent', function(){ return 123; });
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-// require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';

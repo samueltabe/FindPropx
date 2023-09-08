@@ -22,6 +22,16 @@
         color: #e5dddd;
         background-color: #E78C2D;
     }
+    .verify{
+        color: green;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .unverify{
+        color: rgba(212, 14, 14, 0.852);
+        padding: 5px;
+        border-radius: 5px;
+    }
 </style>
 @section('content')
 
@@ -78,6 +88,13 @@ Breadcrumb -->
                   <li><a href="#"> <i class="fas fa-print"></i> </a></li>
                 </ul>
               </div>
+              <div>
+                @if($houses->users && $houses->users->verified)
+                <h6>This Agent is <span class="verify">verified</span></h6>
+                @else
+                    <h6>This Agent is <span class="unverify">Unverified</span></h6>
+                @endif
+              </div>
               <div class="agent-contact">
                 <div class="d-flex align-items-center p-4 border border-bottom-0">
                   <div class="agent-contact-avatar me-3">
@@ -104,6 +121,13 @@ Breadcrumb -->
                 </div>
               </div>
             </div>
+          </div>
+          <div class="mb-3">
+            @if($houses->users && $houses->users->verified)
+            <h6>The Agent that upload this property is <span class="verify">verified</span></h6>
+            @else
+                <h6>The Agent that upload this property is <span class="unverify">Unverified.</span> Trade with caution!</h6>
+            @endif
           </div>
           <div class="col-lg-8 order-lg-1">
             <div class="property-detail-img popup-gallery">

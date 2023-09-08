@@ -104,7 +104,7 @@ class FrontendController extends Controller
     public function single($id)
     {
         $houses = House::findorFail($id);
-        $house = House::latest()->with(['images', 'types', 'states'])->take(6)->get();
+        $house = House::latest()->with(['images', 'types', 'states', 'users'])->take(6)->get();
         $type = House::where('type_id', $houses->type_id)->where('id', '!=', $houses->id)->with(['images', 'users', 'types', 'states', 'lgas'])
         ->latest()
         ->take(3)

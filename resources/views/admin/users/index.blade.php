@@ -38,17 +38,17 @@
                                     </thead>
 
                                     <tbody>
-                                    @forelse ($users as $hou)
+                                    @forelse ($users as $user)
 
                                     <tr>
                                         <td>
-                                            <img src="{{ asset('upload/admin-dp/'.$hou->image) }}" width="50" alt="">
+                                            <img src="{{ asset('upload/admin-dp/'.$user->image) }}" width="50" alt="">
                                         </td>
-                                        <td>{{ $hou->name }}</td>
-                                        <td>{{ $hou->phone ?? '' }}</td>
-                                        <td>{{ $hou->email }}</td>
-                                        <td>{{ $hou->lga->local_name }}</td>
-                                        <td>{{ $hou->state->name }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->phone ?? '' }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->lga->local_name }}</td>
+                                        <td>{{ $user->state->name }}</td>
                                         <td>
                                             @if($user->verified)
                                                 <span class="badge badge-success">Verified</span>
@@ -57,12 +57,12 @@
                                             @endif
                                         </td>
                                         <td class="d-flex">
-                                            <form method="post" action="/admin/update-agentx">
+                                            <form method="post" action="{{ url('/admin/update-agent',$user->id) }}">
                                                 @csrf
-                                                <input name="name" type="hidden" value="{{$user->id}}"/>
+                                                {{-- <input name="name" type="hidden" value="{{$user->id}}"/> --}}
                                                 <button type="submit" class="btn btn-outline-primary"><i class="mdi mdi-swap-horizontal-circle"></i></button>
                                             </form>
-                                            <a href="{{ url('admin/house/delete/'.$hou->id) }}" class="btn btn-outline-danger mx-1"><i class="mdi mdi-delete"></i></a>
+                                            <a href="" class="btn btn-outline-danger mx-1"><i class="mdi mdi-delete"></i></a>
                                         </td>
                                     </tr>
                                     @empty

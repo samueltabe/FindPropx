@@ -31,7 +31,7 @@
         </div>
         <div class="d-flex align-items-center">
             <div class="call me-4">
-                <a href="tel:1-800-555-1234"><i class="fa fa-phone me-2 fa-flip-horizontal"></i>1-800-555-1234 </a>
+                {{-- <a href="tel:1-800-555-1234"><i class="fa fa-phone me-2 fa-flip-horizontal"></i>1-800-555-1234 </a> --}}
             </div>
             {{-- <div class="login me-4">
                 <a data-bs-toggle="modal" data-bs-target="#loginModal" href="#">Hello sign in<i class="fa fa-user ps-2"></i></a>

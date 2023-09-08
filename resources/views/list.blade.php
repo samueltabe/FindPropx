@@ -36,12 +36,12 @@ breadcrumb -->
   <section class="space-ptb">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <div class="section-title mb-3 mb-lg-4">
-            {{-- <h2><span class="text-primary">156</span> Results</h2> --}}
+        <div class="col-md-10">
+          <div class="section-title mb-lg-4">
+            <h4>We advice you trade with caution when dealing with Agents who are <span class="text-primary">UNVERIFIED</span></h4>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="property-filter-tag">
             <ul class="list-unstyled">
               <li><a href="{{ url('/list') }}">Refresh <i class="fas fa-redo-alt"></i> </a></li>

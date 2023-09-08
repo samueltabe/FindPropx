@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 });
 
-Route::get('/state',[App\Http\Controllers\StateSelectorController::class, 'index']);
+Route::get('/states',[App\Http\Controllers\StateSelectorController::class, 'index']);
 
 Route::get('/state-lga',[App\Http\Controllers\StateSelectorController::class, 'stateLga']);
 
