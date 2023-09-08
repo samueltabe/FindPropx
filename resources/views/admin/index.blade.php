@@ -23,8 +23,8 @@
                         </div>
                         <div class="media-body align-self-center">
                             <div class="text-right">
-                                <h4 class="font-20 my-0 font-weight-bold"><span data-plugin="counterup">15852</span></h4>
-                                <p class="mb-0 mt-1 text-truncate">Total Sales</p>
+                                <h4 class="font-20 my-0 font-weight-bold"><span data-plugin="counterup">{{ $houses->count() }}</span></h4>
+                                <p class="mb-0 mt-1 text-truncate">Total Properties</p>
                             </div>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="media-body align-self-center">
                             <div class="text-right">
-                                <h4 class="font-20 my-0 font-weight-bold"><span data-plugin="counterup">5210</span></h4>
+                                <h4 class="font-20 my-0 font-weight-bold"><span data-plugin="counterup">{{ $users->count() }}</span></h4>
                                 <p class="mb-0 mt-1 text-truncate">New Users</p>
                             </div>
                         </div>

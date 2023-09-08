@@ -47,7 +47,7 @@ Route::group(['middleware'=>['auth']],function(){
 
 
 //Admin Routes
-Route::group(['middleware'=>['auth', 'isAdmin',]],function(){
+Route::group(['middleware'=>['auth', 'isAdmin']],function(){
     Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index']);
 
     Route::get('admin/profile', [App\Http\Controllers\AdminController::class, 'Profile']);
@@ -60,6 +60,9 @@ Route::group(['middleware'=>['auth', 'isAdmin',]],function(){
     Route::get('/admin/type', [App\Http\Controllers\AdminController::class, 'Type']);
     Route::get('/admin/type/create', [App\Http\Controllers\AdminController::class, 'TypeCreate']);
     Route::post('/admin/type/add', [App\Http\Controllers\AdminController::class, 'TypeAdd']);
+    Route::get('/admin/type/edit/{id}', [App\Http\Controllers\AdminController::class, 'TypeEdit']);
+    Route::put('/admin/type/update/{id}', [App\Http\Controllers\AdminController::class, 'TypeUpdate']);
+    Route::get('/admin/type/delete/{id}', [App\Http\Controllers\AdminController::class, 'TypeDelete']);
 
     Route::get('/admin/house', [App\Http\Controllers\AdminController::class, 'House']);
     Route::get('/admin/house/create', [App\Http\Controllers\AdminController::class, 'HouseCreate']);
@@ -71,6 +74,9 @@ Route::group(['middleware'=>['auth', 'isAdmin',]],function(){
     Route::get('/admin/feature', [App\Http\Controllers\AdminController::class, 'feature']);
     Route::get('/admin/feature/create', [App\Http\Controllers\AdminController::class, 'featureCreate']);
     Route::post('/admin/feature/add', [App\Http\Controllers\AdminController::class, 'featureAdd']);
+    Route::get('/admin/feature/edit/{id}', [App\Http\Controllers\AdminController::class, 'featureEdit']);
+    Route::put('/admin/feature/update/{id}', [App\Http\Controllers\AdminController::class, 'featureUpdate']);
+    Route::get('/admin/feature/delete/{id}', [App\Http\Controllers\AdminController::class, 'featureDelete']);
 
     Route::get('/admin/image', [App\Http\Controllers\AdminController::class, 'image']);
     Route::get('/admin/image/create', [App\Http\Controllers\AdminController::class, 'imageCreate']);
@@ -79,10 +85,13 @@ Route::group(['middleware'=>['auth', 'isAdmin',]],function(){
     Route::get('/admin/status', [App\Http\Controllers\AdminController::class, 'Status']);
     Route::get('/admin/status/create', [App\Http\Controllers\AdminController::class, 'StatusCreate']);
     Route::post('/admin/status/add', [App\Http\Controllers\AdminController::class, 'StatusAdd']);
+
+    Route::get('/admin/usersx', [App\Http\Controllers\AdminController::class, 'users']);
+    Route::post('/admin/update-agent', function(){ return 123; });
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';

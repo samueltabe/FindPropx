@@ -42,22 +42,20 @@
               <form class="row basic-select-wrapper">
                 <div class="form-group col-lg-2 col-md-6">
                   <label class="form-label">Property type</label>
-                  <select class="form-control basic-select">
-                    <option>All Type</option>
-                    <option>Villa</option>
-                    <option>Apartment Building</option>
-                    <option>Commercial</option>
-                    <option>Office</option>
-                    <option>Residential</option>
-                    <option>Shop</option>
-                    <option>Apartment</option>
+                  <select class="form-control basic-select" id="typeFilt">
+                    <option>All Types</option>
+                    @foreach ($type as $ty)
+                        <option value="{{ $ty->id }}">{{ $ty->name }}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="form-group col-lg-2 col-md-6">
                   <label class="form-label">Status</label>
-                  <select class="form-control basic-select">
-                    <option>For Rent</option>
-                    <option>For Sale</option>
+                  <select class="form-control basic-select" id="typeFiltre">
+                    <option>All Status</option>
+                    @foreach ($status as $ty)
+                        <option value="{{ $ty->id }}">{{ $ty->name }}</option>
+                    @endforeach
                   </select>
                 </div>
                 <div class="form-group d-flex col-lg-6">
@@ -285,7 +283,7 @@ Featured properties-->
         <div class="col-lg-8 text-center position-relative">
           <div class="section-title">
             <span class="text-primary fw-bold d-block mb-3">Buy or sell</span>
-            <h4 class="text-white">Whether you're looking to buy, sell, or rent a property, or seeking an excellent land investment opportunity, Findpropx is here to transform your property search experience. Join us today and unlock the door to your dream property!</h4>
+            <p class="text-white">Whether you're looking to buy, sell, or rent a property, or seeking an excellent land investment opportunity, Findpropx is here to transform your property search experience. Join us today and unlock the door to your dream property!</p>
           </div>
           <a data-bs-toggle="modal" data-bs-target="#loginModal" class="btn btn-primary mb-2 mb-sm-0" href="#">Submit Property</a>
           <a class="btn btn-white mb-2 mb-sm-0" href="{{ url('/list') }}">Browse Properties</a>
@@ -556,6 +554,7 @@ Featured properties-->
             <div class="feature-info-detail">
               <div class="feature-info-icon">
                 <i class="flaticon-like"></i>
+
               </div>
               <div class="feature-info-content">
                 <h6 class="mb-3 feature-info-title">User-Friendly Interface</h6>
@@ -572,7 +571,7 @@ Featured properties-->
           <div class="feature-info feature-info-02">
             <div class="feature-info-detail">
               <div class="feature-info-icon">
-                <i class="flaticon-agent"></i>
+                <i class="flaticon-database"></i>
               </div>
               <div class="feature-info-content">
                 <h6 class="mb-3 feature-info-title">Extensive Database</h6>
@@ -589,7 +588,7 @@ Featured properties-->
           <div class="feature-info feature-info-02">
             <div class="feature-info-detail">
               <div class="feature-info-icon">
-                <i class="flaticon-like-1"></i>
+                <i class="flaticon-shopping-cart"></i>
               </div>
               <div class="feature-info-content">
                 <h6 class="mb-3 feature-info-title">Secure Transactions</h6>

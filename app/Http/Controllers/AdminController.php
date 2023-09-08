@@ -19,7 +19,9 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        $users = User::all();
+        $houses = House::all();
+        return view('admin.index', compact('users', 'houses'));
     }
 
     public function stateList()
@@ -89,11 +91,29 @@ class AdminController extends Controller
 
         return redirect('/admin/type')->with('message', 'Property Type successfully Added');
     }
+    public function TypeEdit($id)
+    {
+        $type = Type::find($id);
+        return view('admin.type.edit', compact('type'));
+    }
+    public function TypeUpdate(Request $req, $id)
+    {
+        $type = Type::find($id);
+        $type->name=$req->input('name');
+        $type->update();
+
+        return redirect('/admin/type')->with('message', 'Data successfully updated!');
+    }
+    public function TypeDelete($id)
+    {
+        $type = Type::find($id);
+        $type->delete();
+        return redirect('/admin/type')->with('message', 'Data details successfully Deleted');
+    }
 
 
     public function House()
     {
-
         // $agentName= Auth::user()->name;
         // $house = House::latest()->with(['images', 'types'])->where('agent', $agentName)->get();
         $house = House::latest()->with(['images', 'types', 'users', 'states', 'lgas'])->get();
@@ -248,6 +268,28 @@ class AdminController extends Controller
 
         return redirect('/admin/feature')->with('message', 'Property Feature successfully Added');
     }
+    public function featureEdit($id)
+    {
+        $feature = Feature::find($id);
+        return view('admin.feature.edit', compact('feature'));
+    }
+    public function featureUpdate(Request $req, $id)
+    {
+        $featues = Feature::find($id);
+        $featues->name=$req->input('name');
+        $featues->update();
+
+        return redirect('/admin/feature')->with('message', 'Data successfully updated!');
+    }
+    public function featureDelete($id)
+    {
+        $feature = Feature::find($id);
+        $feature->delete();
+        return redirect('/admin/feature')->with('message', 'Data details successfully Deleted');
+    }
+
+
+
 
     public function Status()
     {
@@ -268,6 +310,26 @@ class AdminController extends Controller
         $status->save();
 
         return redirect('/admin/status')->with('message', 'Property Feature successfully Added');
+    }
+
+    public function users(User $user)
+    {
+        $user->update([
+            'verified' => !$user->verified,
+        ]);
+        $users = User::all();
+        return view('admin.users.index', compact('users', 'user'));
+    }
+
+    public function toggleVerification(Request $request)
+    {
+        $user = User::findOrFail($request->user_id);
+        $user->update([
+            // $user->verified=$req->verified,
+            'verified' => !$user->verified,
+        ]);
+
+        return redirect()->back()->compact('user'); // Redirect back to the user list page
     }
 
 

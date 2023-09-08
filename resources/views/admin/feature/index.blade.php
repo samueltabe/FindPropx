@@ -41,8 +41,8 @@
                                         {{ $feat->name }}
                                      </td>
                                         <td>
-                                            <a href="" class="btn btn-outline-primary disabled"><i class="mdi mdi-account-edit-outline"></i></a>
-                                            <a href="" class="btn btn-outline-danger disabled"><i class="mdi mdi-delete"></i></a>
+                                            <a href="{{ url('admin/feature/edit/'.$feat->id) }}" class="btn btn-outline-primary"><i class="mdi mdi-account-edit-outline"></i></a>
+                                            <a href="{{ url('admin/feature/delete/'.$feat->id) }}" class="btn btn-outline-danger"><i class="mdi mdi-delete"></i></a>
                                         </td>
                                     </tr>
                                     @empty

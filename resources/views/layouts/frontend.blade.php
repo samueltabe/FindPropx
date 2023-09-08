@@ -88,6 +88,36 @@ $(document).ready(function () {
     //     var baseUrl = "{{ url('/list') }}";
     //     window.location.href = baseUrl;
     // });
+
+    $('#typeFilt').change(function () {
+        var selectedTypeId = $(this).val();
+        var baseUrl = "{{ url('/list') }}";
+
+        if (selectedTypeId) {
+            window.location.href = baseUrl + '?lga_id=' + selectedTypeId;
+        } else  {
+            window.location.href = baseUrl
+        }
+    });
+    // $('#allTypesLink').click(function () {
+    //     var baseUrl = "{{ url('/list') }}";
+    //     window.location.href = baseUrl;
+    // });
+
+    $('#typeFiltre').change(function () {
+        var selectedTypeId = $(this).val();
+        var baseUrl = "{{ url('/list') }}";
+
+        if (selectedTypeId) {
+            window.location.href = baseUrl + '?lga_id=' + selectedTypeId;
+        } else  {
+            window.location.href = baseUrl
+        }
+    });
+    // $('#allTypesLink').click(function () {
+    //     var baseUrl = "{{ url('/list') }}";
+    //     window.location.href = baseUrl;
+    // });
 });
 </script>
 

@@ -269,11 +269,11 @@ Breadcrumb -->
                 <div class="col-sm-3 mb-3 mb-sm-0">
                   <h5>Property video</h5>
                 </div>
-                <div class="col-sm-9">
-                  <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="546" height="315" src="https://www.youtube.com/embed/kacyaEXqVhs" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="col-lg-4">
+                    <div class="popup-video">
+                      <a  class="popup-icon  d-flex justify-content-lg-end" target="_blank" href="{{ $houses->video }}"> <span class="pe-3"> Play Video</span> <i class="flaticon-play-button"></i> </a>
+                    </div>
                   </div>
-                </div>
               </div>
             </div>
             {{--<hr class="mt-4 mb-4 mb-sm-5 mt-sm-5">
@@ -585,28 +585,5 @@ Breadcrumb -->
   <!--=================================
   Review -->
   </div>
-
-  <!--=================================
-  newsletter -->
-  <section class="py-5 bg-primary">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-5">
-          <h3 class="text-white mb-0">Sign up to our newsletter to get the latest news and offers.</h3>
-        </div>
-        <div class="col-md-7 mt-3 mt-md-0">
-          <div class="newsletter">
-            <form>
-              <div class="mb-0">
-                <input type="email" class="form-control" placeholder="Enter email">
-              </div>
-              <button type="submit" class="btn btn-dark b-radius-left-none">Get notified</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--=================================
-  newsletter -->
 @endsection
+

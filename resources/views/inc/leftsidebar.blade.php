@@ -102,11 +102,11 @@
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
                         <i class="mdi mdi-crop-landscape"></i>
-                        <span> Land </span>
+                        <span> List of Users </span>
                         <span class="menu-arrow"></span>
                     </a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="#">View</a></li>
+                        <li><a href="{{ url('admin/users') }}">View</a></li>
                     </ul>
                 </li>
             </ul>

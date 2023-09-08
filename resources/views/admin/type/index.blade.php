@@ -39,8 +39,8 @@
                                        <tr>
                                            <td>{{ $ty->name }}</td>
                                            <td>
-                                               <a href="" class="btn btn-outline-primary disabled"><i class="mdi mdi-account-edit-outline"></i></a>
-                                               <a href="" class="btn btn-outline-danger disabled"><i class="mdi mdi-delete"></i></a>
+                                               <a href="{{ url('admin/type/edit/'.$ty->id) }}" class="btn btn-outline-primary"><i class="mdi mdi-account-edit-outline"></i></a>
+                                               <a href="{{ url('admin/type/delete/'.$ty->id) }}" class="btn btn-outline-danger"><i class="mdi mdi-delete"></i></a>
                                            </td>
                                        </tr>
                                        @empty

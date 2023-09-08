@@ -21,6 +21,7 @@ class FrontendController extends Controller
         $houses = House::latest()->with(['images', 'types', 'users', 'states'])->take(6)->get();
         $type = Type::all();
         $state = State::all();
+        $status = Status::all();
         // $house = House::findorFail($houseId);
         // $houseUrl = route('house.show', ['houseId' => $house->id]);
         // $shareComponent = \Share::page(
@@ -33,7 +34,7 @@ class FrontendController extends Controller
         // ->telegram()
         // ->whatsapp()
         // ->reddit();
-        return view('index' , compact('places','houses', 'type', 'state'));
+        return view('index' , compact('places','houses', 'type', 'state', 'status'));
     }
 
     // public function list(Request $request)
