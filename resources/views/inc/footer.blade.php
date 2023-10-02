@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                {{ date('Y') }} &copy; Tradex App by <a href="#">Samtabe</a>
+                {{ date('Y') }} &copy; FindPropx App by <a href="#">Samtabe</a>
             </div>
         </div>
     </div>

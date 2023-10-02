@@ -58,7 +58,7 @@ breadcrumb -->
               </div>
               <div class="ms-3">
                 <h6>Email</h6>
-                <p>support@realvilla.demo</p>
+                <p>support@findpropx.com</p>
               </div>
             </div>
             <div class="d-flex mb-3">
@@ -67,27 +67,18 @@ breadcrumb -->
               </div>
               <div class="ms-3">
                 <h6>Phone Number</h6>
-                <p>(123) 345-6789</p>
-              </div>
-            </div>
-            <div class="d-flex mb-3">
-              <div class="contact-address-icon">
-                <i class="flaticon-fax text-primary font-xlll"></i>
-              </div>
-              <div class="ms-3">
-                <h6>Fax</h6>
-                <p>(456) 478-2589</p>
+                <p>+234 912 854 7751</p>
               </div>
             </div>
             <div class="social-icon-02">
               <div class="d-flex align-items-center">
                 <h6 class="me-3">Social:</h6>
                 <ul class="list-unstyled mb-0 list-inline">
-                  <li><a href="#"> <i class="fab fa-facebook-f"></i> </a></li>
-                  <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
-                  <li><a href="#"> <i class="fab fa-linkedin"></i> </a></li>
-                  <li><a href="#"> <i class="fab fa-pinterest"></i> </a></li>
-                  <li><a href="#"> <i class="fab fa-instagram"></i> </a></li>
+                  <li><a href="https://web.facebook.com/profile.php?id=100094901447289&mibextid=LQQJ4d&_rdc=1&_rdr" target="_blank"> <i class="fab fa-facebook-f"></i> </a></li>
+                  {{-- <li><a href="#"> <i class="fab fa-twitter"></i> </a></li>
+                  <li><a href="#"> <i class="fab fa-linkedin"></i> </a></li> --}}
+                  <li><a href="https://www.youtube.com/@Findpropx" target="_blank"> <i class="fab fa-youtube"></i> </a></li>
+                  <li><a href="https://www.instagram.com/findpropx/?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"> <i class="fab fa-instagram"></i> </a></li>
                 </ul>
               </div>
             </div>
@@ -96,40 +87,47 @@ breadcrumb -->
         <div class="col-lg-7 mt-4 mt-lg-0">
           <div class="contact-form">
             <h4 class="mb-4">Need assistance? Please complete the contact form</h4>
-            <form>
+            <div>
+                @if(Session::has('message'))
+                <p class="alert alert-success">{{ Session::get('message') }}</p>
+                @endif
+            </div>
+            <form action="{{ route('sendMessage') }}" method="post">
+                @csrf
+                @method('POST')
               <div class="row">
                 <div class="mb-3 col-md-6">
-                  <input type="text" class="form-control" id="name" placeholder="Your name">
+                  <input type="text" class="form-control" name="name" placeholder="Your name" required>
                 </div>
                 <div class="mb-3 col-md-6">
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Your email">
+                  <input type="email" class="form-control" name="email" placeholder="Your email" required>
                 </div>
                 <div class="mb-3 col-md-6">
-                  <input type="text" class="form-control" id="phone" placeholder="Your phone">
+                  <input type="text" class="form-control" name="phone" placeholder="Your phone" required>
                 </div>
                 <div class="mb-3 col-md-6">
-                  <input type="text" class="form-control" id="subject" placeholder="Subject">
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
                 </div>
                 <div class="mb-3 col-md-12">
-                  <textarea class="form-control" rows="4" placeholder="Your message"></textarea>
+                  <textarea class="form-control" rows="4" name="message" placeholder="Your message" required></textarea>
                 </div>
-                <div class="mb-3 col-md-12">
+                {{-- <div class="mb-3 col-md-12">
                   <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                   <label class="form-check-label pe-5" for="flexCheckDefault">
                    I consent to having this website store my submitted information so they can respond to my inquiry.
                   </label>
-                </div>
+                </div> --}}
                 </div>
                 <div class="col-md-12">
-                  <a class="btn btn-primary" href="#">Send message</a>
+                  <button class="btn btn-primary" type="submit">Send message</button>
                 </div>
               </div>
             </form>
           </div>
         </div>
       </div>
-      <div class="row mt-1 mt-md-2">
+      {{-- <div class="row mt-1 mt-md-2">
         <div class="col-12">
           <h4 class="mb-4 my-4 my-sm-5">Additional contact Info</h4>
         </div>
@@ -163,7 +161,7 @@ breadcrumb -->
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </section>
   <!--=================================

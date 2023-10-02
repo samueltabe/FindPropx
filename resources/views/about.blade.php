@@ -45,9 +45,9 @@
                 best real estate opportunities, ensuring a seamless and efficient
                 experience for both buyers and sellers.
             </p>
-            <div class="popup-video">
+            {{-- <div class="popup-video">
               <a class="popup-icon popup-youtube" href="https://www.youtube.com/watch?v=LgvseYYhqU0"> <i class="flaticon-play-button"></i> </a>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
@@ -228,30 +228,79 @@
       <div class="row">
         <div class="col-12">
           <div class="section-title text-center">
-            <h2>Meet our agents</h2>
+            <h2>Our Team</h2>
           </div>
         </div>
       </div>
       <div class="row g-0">
-        @foreach ($users as $user )
         <div class="col-lg-3 col-sm-6 mb-4 mb-sm-0">
-          <div class="agent text-center">
+        <div class="agent text-center">
             <div class="agent-detail">
-              <div class="agent-avatar avatar avatar-xllll">
-                <img class="img-fluid rounded-circle" src="{{ asset('upload/admin-dp/'.$user->image)?? '' }}" alt="">
-              </div>
-              <div class="agent-info">
-                <h6 class="mb-0"> <a href="agent-detail.html">{{ $user->name }}</a></h6>
-                <span class="text-primary font-sm">Founder & CEO </span>
-                <p class="mt-3 mb-0">{{ $user->bio }}</p>
-              </div>
+            <div class="agent-avatar avatar avatar-xllll">
+                <img class="img-fluid rounded-circle" src="{{ asset("assets/images/teams/irene.jpg") }}" alt="">
             </div>
-            <div class="agent-button">
-              <a class="btn btn-light d-grid" href="agent-detail.html">View Profile</a>
+            <div class="agent-info">
+                <h6 class="mb-0"> <a href="agent-detail.html">Irene O.Etugbo</a></h6>
+                <span class="text-primary font-sm">Business Development Manager </span>
+                <p class="mt-3 mb-0"></p>
             </div>
-          </div>
+            </div>
+            {{-- <div class="agent-button">
+            <a class="btn btn-light d-grid" href="agent-detail.html">View Profile</a>
+            </div> --}}
         </div>
-        @endforeach
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-4 mb-sm-0">
+            <div class="agent text-center">
+                <div class="agent-detail">
+                    <div class="agent-avatar avatar avatar-xllll">
+                    <img class="img-fluid rounded-circle" src="{{ asset("assets/images/teams/sam.jpg") }}" alt="">
+                    </div>
+                    <div class="agent-info">
+                    <h6 class="mb-0"> <a href="agent-detail.html">Samuel Idowu</a></h6>
+                    <span class="text-primary font-sm">Marketing & Comm. Manager </span>
+                    <p class="mt-3 mb-0"></p>
+                    </div>
+                </div>
+                {{-- <div class="agent-button">
+                    <a class="btn btn-light d-grid" href="agent-detail.html">View Profile</a>
+                </div> --}}
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-4 mb-sm-0">
+            <div class="agent text-center">
+                <div class="agent-detail">
+                    <div class="agent-avatar avatar avatar-xllll">
+                    <img class="img-fluid rounded-circle" src="{{ asset("assets/images/teams/gloria.jpg") }}" alt="">
+                    </div>
+                    <div class="agent-info">
+                    <h6 class="mb-0"> <a href="agent-detail.html">Gloria .O. chime</a></h6>
+                    <span class="text-primary font-sm">Relationship Manager</span>
+                    <p class="mt-3 mb-0"></p>
+                    </div>
+                </div>
+                {{-- <div class="agent-button">
+                    <a class="btn btn-light d-grid" href="agent-detail.html">View Profile</a>
+                </div> --}}
+            </div>
+        </div>
+        <div class="col-lg-3 col-sm-6 mb-4 mb-sm-0">
+            <div class="agent text-center">
+                <div class="agent-detail">
+                    <div class="agent-avatar avatar avatar-xllll">
+                    <img class="img-fluid rounded-circle" src="{{ asset("assets/images/teams/samtabe.jpg") }}" alt="">
+                    </div>
+                    <div class="agent-info">
+                    <h6 class="mb-0"> <a href="agent-detail.html">Samuel Tabe</a></h6>
+                    <span class="text-primary font-sm">IT & Content Manager</span>
+                    <p class="mt-3 mb-0"></p>
+                    </div>
+                </div>
+                {{-- <div class="agent-button">
+                    <a class="btn btn-light d-grid" href="agent-detail.html">View Profile</a>
+                </div> --}}
+            </div>
+        </div>
       </div>
     </div>
   </section>

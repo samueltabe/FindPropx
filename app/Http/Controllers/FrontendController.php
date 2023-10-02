@@ -10,6 +10,7 @@ use App\Models\House;
 use App\Models\State;
 use App\Models\Feature;
 use App\Models\Lga;
+use App\Models\Message;
 use App\Models\Status;
 use Illuminate\Http\Request;
 
@@ -139,6 +140,21 @@ class FrontendController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+    public function sendMessage(Request $req)
+    {
+        $message = new Message;
+        $message->name=$req->name;
+        $message->email=$req->email;
+        $message->phone=$req->phone;
+        $message->subject=$req->subject;
+        $message->message=$req->message;
+
+
+        $message->save();
+
+        return redirect('/contact')->with('message', 'Thanks for reaching out, we shall get back to you soonest!!');
     }
 
     public function coming()

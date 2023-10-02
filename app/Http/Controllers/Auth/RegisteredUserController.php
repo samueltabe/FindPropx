@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Models\Type;
 use App\Models\User;
 use App\Models\House;
+use App\Models\State;
+use App\Models\Status;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rules;
 use App\Http\Controllers\Controller;
@@ -23,7 +26,10 @@ class RegisteredUserController extends Controller
     {
         $house = House::latest()->with(['images', 'types', 'states'])->take(8)->get();
         $houses = House::latest()->with(['images', 'types', 'states'])->take(6)->get();
-        return view('index', compact('house', 'houses'));
+        $type = Type::all();
+        $state = State::all();
+        $status = Status::all();
+        return view('index', compact('house', 'houses', 'type', 'state', 'status'));
     }
 
     /**

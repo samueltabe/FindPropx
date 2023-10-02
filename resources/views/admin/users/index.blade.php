@@ -53,7 +53,7 @@
                                             @if($user->verified)
                                                 <span class="badge badge-success">Verified</span>
                                             @else
-                                                <span class="badge badge-danger">Unverifiedx</span>
+                                                <span class="badge badge-danger">Unverified</span>
                                             @endif
                                         </td>
                                         <td class="d-flex">
@@ -62,7 +62,7 @@
                                                 {{-- <input name="name" type="hidden" value="{{$user->id}}"/> --}}
                                                 <button type="submit" class="btn btn-outline-primary"><i class="mdi mdi-swap-horizontal-circle"></i></button>
                                             </form>
-                                            <a href="" class="btn btn-outline-danger mx-1"><i class="mdi mdi-delete"></i></a>
+                                            <a href="" class="btn btn-outline-danger mx-1 disabled"><i class="mdi mdi-delete"></i></a>
                                         </td>
                                     </tr>
                                     @empty

@@ -20,6 +20,7 @@ Route::get('/single/{id}',[App\Http\Controllers\FrontendController::class, 'sing
 Route::get('/about',[App\Http\Controllers\FrontendController::class, 'about'])->name('about');
 Route::get('/service',[App\Http\Controllers\FrontendController::class, 'service'])->name('service');
 Route::get('/contact',[App\Http\Controllers\FrontendController::class, 'contact'])->name('contact');
+Route::post('/contact/send',[App\Http\Controllers\FrontendController::class, 'sendMessage'])->name('sendMessage');
 Route::get('/coming',[App\Http\Controllers\FrontendController::class, 'coming']);
 Route::get('/state',[App\Http\Controllers\FrontendController::class, 'state']);
 Route::get('/share', [App\Http\Controllers\SocialShareButtonsController::class,'ShareWidget']);
@@ -89,7 +90,7 @@ Route::group(['middleware'=>['auth', 'isAdmin']],function(){
     Route::get('/admin/users', [App\Http\Controllers\AdminController::class, 'users']);
     Route::post('/admin/update-agent/{id}', [App\Http\Controllers\AdminController::class, 'toggleVerification'])->name('admin.update.agent');
 
-    // Route::get('/admin/update-agent', function(){ return 123; });
+    Route::get('/admin/messages', [App\Http\Controllers\AdminController::class, 'messages']);
 });
 
 Route::get('/dashboard', function () {

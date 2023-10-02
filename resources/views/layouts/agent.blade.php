@@ -122,7 +122,13 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="page-title-box">
-                                <h4 class="page-title">Welcome ! {{ Auth::user()->name }}</h4>
+                                <h4 class="page-title">Welcome ! {{ Auth::user()->name }}.
+                                    @if(Auth::user()->verified)
+                                       You are <span class="badge badge-success"> Verified</span>
+                                    @else
+                                        You are <span class="badge badge-danger"> Unverified</span>
+                                    @endif
+                                </h4>
                                 <div class="page-title-right">
                                     <ol class="breadcrumb p-0 m-0">
                                         <li class="breadcrumb-item"><a href="#">Tradex</a></li>

@@ -11,6 +11,7 @@ use App\Models\State;
 use App\Models\Status;
 use App\Models\Feature;
 use App\Models\HouseFeature;
+use App\Models\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -329,6 +330,12 @@ class AdminController extends Controller
         ]);
 
         return redirect()->back()->with('user', $user);
+    }
+
+    public function messages()
+    {
+        $message = Message::orderBy('created_at', 'desc')->get();
+        return view('admin.messages.index', compact('message'));
     }
 
 

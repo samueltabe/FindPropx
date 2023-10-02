@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Type;
 use App\Models\House;
-use App\Providers\RouteServiceProvider;
+use App\Models\State;
+use App\Models\Status;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use App\Providers\RouteServiceProvider;
+use App\Http\Requests\Auth\LoginRequest;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -20,7 +23,10 @@ class AuthenticatedSessionController extends Controller
     {
         $house = House::latest()->with(['images', 'types', 'states'])->take(8)->get();
         $houses = House::latest()->with(['images', 'types', 'states'])->take(6)->get();
-        return view('index', compact('house', 'houses'));
+        $type = Type::all();
+        $state = State::all();
+        $status = Status::all();
+        return view('index', compact('house', 'houses', 'type', 'state', 'status'));
     }
 
     /**

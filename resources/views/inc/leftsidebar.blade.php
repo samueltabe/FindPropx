@@ -109,6 +109,16 @@
                         <li><a href="{{ url('admin/users') }}">View</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="javascript: void(0);" class="waves-effect">
+                        <i class="mdi mdi-folder-open-outline"></i>
+                        <span> List of Messages </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="{{ url('admin/messages') }}">View</a></li>
+                    </ul>
+                </li>
             </ul>
 
         </div>

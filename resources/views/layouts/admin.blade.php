@@ -125,7 +125,7 @@
                                 <h4 class="page-title">Welcome ! {{ Auth::user()->name }}</h4>
                                 <div class="page-title-right">
                                     <ol class="breadcrumb p-0 m-0">
-                                        <li class="breadcrumb-item"><a href="#">Tradex</a></li>
+                                        <li class="breadcrumb-item"><a href="#">FindPropx</a></li>
                                         {{-- <li class="breadcrumb-item active">{{ Auth::user()->name }} Dashboard</li> --}}
                                     </ol>
                                 </div>
