@@ -119,6 +119,14 @@ $(document).ready(function () {
     //     window.location.href = baseUrl;
     // });
 });
+
+window.addEventListener("load", function() {
+    var video = document.getElementById("background-video");
+    video.play().catch(function(error) {
+    // Handle autoplay error, if any
+    console.error("Autoplay failed:", error);
+    });
+});
 </script>
 
 </body>

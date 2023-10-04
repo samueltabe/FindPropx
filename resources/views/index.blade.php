@@ -12,7 +12,12 @@
 
   <!--banner -->
   <section class="position-relative">
-    <div class="banner bg-holder bg-overlay-gradient-02" style="background-image: url(frontend/asset/images/banner-02.jpg);">
+    <div class="banner bg-holder bg-overlay-gradient-02">
+      <video autoplay muted loop playsinline controls id="background-video">
+        <source src="{{ asset('frontend/asset/bg-videos/unsound.mp4') }}" type="video/mp4">
+        <source src="{{ asset('frontend/asset/bg-videos/unsound.mp4') }}" type="video/webm">
+        Your browser does not support the video tag.
+      </video>
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-xl-6 position-relative">
@@ -21,14 +26,7 @@
         </div>
       </div>
     </div>
-    <svg class="banner-shap"
-      xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
-      width="100%" height="100px">
-      <path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
-        d="M1920.000,100.000 L0.000,100.000 L1920.000,-0.000 L1920.000,100.000 Z"/>
-      </svg>
-    </section>
+  </section>
     <!--=================================
     banner -->
 

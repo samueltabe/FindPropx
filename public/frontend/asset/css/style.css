@@ -741,6 +741,7 @@ input.form-control {
     -webkit-transition: all .35s;
     transition: all .35s; }
 
+
 .bg-overlay-gradient-04 {
   position: relative; }
   .bg-overlay-gradient-04:before {
@@ -757,6 +758,23 @@ input.form-control {
     height: 40%;
     -webkit-transition: all .35s;
     transition: all .35s; }
+
+    #background-video {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100vw;
+        transform: translateY(-50%);
+        height: auto;
+        z-index: -1;
+        transition: transform 0.5s ease;
+      }
+
+      .banner {
+        max-width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+      }
 
 .avatar {
   width: 50px;

@@ -49,7 +49,7 @@ breadcrumb -->
               </div>
               <div class="ms-3">
                 <h6>Address</h6>
-                <p>214 West Arnold St. New York, NY 10002</p>
+                <p>Suite C9 world gate shopping Center Ado-New Karu Nasarawa State, Nigeria</p>
               </div>
             </div>
             <div class="d-flex mb-3">
