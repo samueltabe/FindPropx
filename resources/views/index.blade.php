@@ -33,7 +33,7 @@
     banner -->
 
   <!--property Type -->
-  <section class="property-search-field-top position-reletive">
+  <section class="property-search-field-top position-reletive d-none d-md-block">
     <div class="container">
       <div class="row">
         <div class="col-12">
