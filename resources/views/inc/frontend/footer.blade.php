@@ -29,9 +29,9 @@
           <div class="footer-contact-info">
             <h5 class="text-primary mb-4">Reach Us</h5>
             <ul class="list-unstyled mb-0">
-              <li> <b> <i class="fas fa-map-marker-alt"></i></b><span>214 West Arnold St. New York, NY 10002</span> </li>
+              <li> <b> <i class="fas fa-map-marker-alt"></i></b><span>Suite C9 world gate shopping Center Ado-New Karu Nasarawa State, Nigeria</span> </li>
               <li> <a href="tel:+234 912 854 7751"><i class="fas fa-microphone-alt"></i></a><span>+234 912 854 7751</span> </li>
-              <li> <b><i class="fas fa-headset"></i></b><span>support@findpropx.com</span> </li>
+              <li> <b><i class="flaticon-email"></i></b><span>support@findpropx.com</span> </li>
             </ul>
           </div>
         </div>
@@ -61,7 +61,7 @@
               <ul class="list-unstyled mb-0">
                 <li> <a href="#">Twitter </a> </li>
                 <li> <a href="#">LinkedIn </a> </li>
-                <li> <a href="#">Mission Viejo </a> </li>
+                <li> <a href="#">Mission </a> </li>
               </ul>
             </div>
           </div>

@@ -12,7 +12,7 @@
 
   <!--banner -->
   <section class="position-relative">
-    <div class="banner bg-holder bg-overlay-gradient-02">
+    <div class="banner bg-holder bg-overlay-gradient">
       <video autoplay muted loop playsinline controls id="background-video">
         <source src="{{ asset('frontend/asset/bg-videos/unsound.mp4') }}" type="video/mp4">
         <source src="{{ asset('frontend/asset/bg-videos/unsound.mp4') }}" type="video/webm">
@@ -20,9 +20,11 @@
       </video>
       <div class="container">
         <div class="row">
-          <div class="col-md-8 col-xl-6 position-relative">
-            <h1 class="text-white mb-4 display-4 fw-bold">Find the perfect home to buy or rent</h1>
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <h1 class="text-white text-center mb-4 display-3 fw-bold">Find the perfect home to buy or rent</h1>
           </div>
+          <div class="col-md-2"></div>
         </div>
       </div>
     </div>
@@ -542,7 +544,7 @@ Featured properties-->
         </div>
         <div class="col-lg-6">
           <div class="popup-video mb-4 text-lg-end">
-            <a class="popup-icon popup-youtube d-flex justify-content-lg-end" href="https://www.youtube.com/watch?v=LgvseYYhqU0"> <span class="pe-3"> Play Video</span> <i class="flaticon-play-button"></i> </a>
+            <a class="popup-icon popup-youtube d-flex justify-content-lg-end" href="https://www.youtube.com/shorts/2keGhCx4n_Q"> <span class="pe-3"> Play Video</span> <i class="flaticon-play-button"></i> </a>
           </div>
         </div>
       </div>

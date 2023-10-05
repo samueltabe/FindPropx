@@ -58,7 +58,7 @@ breadcrumb -->
               </div>
               <div class="ms-3">
                 <h6>Email</h6>
-                <p>support@findpropx.com</p>
+                <p><a href="mailto:support@findpropx.com">support@findpropx.com</a></p>
               </div>
             </div>
             <div class="d-flex mb-3">
@@ -67,7 +67,7 @@ breadcrumb -->
               </div>
               <div class="ms-3">
                 <h6>Phone Number</h6>
-                <p>+234 912 854 7751</p>
+                <p><a href="tel:+234 912 854 7751">+234 912 854 7751</a></p>
               </div>
             </div>
             <div class="social-icon-02">
