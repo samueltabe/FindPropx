@@ -45,7 +45,7 @@
                                     <tr>
                                         <td>{{ $hou->id }}</td>
                                         <td>
-                                            <img src="{{config('app.url').'/assets/'.$hou->images[0]->img_url?? 'no image' }}" width="50" alt="">
+                                            <img src="{{'public/assets/'.$hou->images[0]->img_url?? 'no image' }}" width="50" alt="">
                                         </td>
                                         <td>{{ $hou->title }}</td>
                                         <td>{{ $hou->types->name }}</td>
