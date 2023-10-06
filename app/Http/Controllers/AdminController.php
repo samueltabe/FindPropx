@@ -216,7 +216,7 @@ class AdminController extends Controller
            foreach ($images as $image) {
                $filename = $image->getClientOriginalName();
 
-               $path = $image->move('upload/house/images', rand(100, 999) .$filename);
+               $path = $image->move('public/assets/upload/house/images', rand(100, 999) .$filename);
 
                $productImage = Image::find($id);
                $productImage->house_id = $house->id;
