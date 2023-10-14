@@ -45,8 +45,9 @@
                                     <tr>
                                         <td>{{ $hou->id }}</td>
                                         <td>
-                                            <img src="/{{ $hou->images[1]->img_url?? 'no image' }}" width="50" alt="">
+                                            <img src="{{ asset($hou->images[0]->img_url) ?? '' }}" width="50" alt="">
                                         </td>
+
                                         <td>{{ $hou->title }}</td>
                                         <td>{{ $hou->types->name }}</td>
                                         <td>{{ $hou->status->name ?? '' }}</td>
