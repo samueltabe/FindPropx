@@ -229,6 +229,7 @@ class AdminController extends Controller
           'house_id'=>$house->id,
            ]);
        }
+       
 
         return redirect('/admin/house')->with('message', 'House details successfully Added');
     }

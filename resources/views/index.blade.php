@@ -219,7 +219,7 @@ Featured properties-->
         <div class="col-md-4">
           <div class="property-item">
             <div class="property-image bg-overlay-gradient-04">
-              <img class="img-fluid" src="/{{ $house->images[0]->img_url?? 'no image' }}" style="height: 300px" alt="">
+              <img class="img-fluid" src="{{ asset($house->images[0]->img_url) ?? '' }}" style="height: 300px" alt="">
               <div class="property-lable">
                 <span class="badge badge-md bg-primary">{{ $house->types->name ?? '' }}</span>
                 <span class="badge badge-md bg-info">{{ $house->status->name ?? '' }} </span>
