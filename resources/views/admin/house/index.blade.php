@@ -50,7 +50,7 @@
 
                                         <td>{{ $hou->title }}</td>
                                         <td>{{ $hou->types->name }}</td>
-                                        <td>{{ $hou->status->name ?? '' }}</td>
+                                        <td>{{ $hou->status->name ?? 'no status' }}</td>
                                         <td>{{ optional($hou->users)->name }}</td>
                                         <td>{{ $hou->price }}</td>
                                         <td>

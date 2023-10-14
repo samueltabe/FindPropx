@@ -31,10 +31,10 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Property Type</label>
-                                    <select class="form-control" data-toggle="select2" name="type_id" data-placeholder="Choose a Country...">
+                                    <select class="form-control" data-toggle="select2" name="type_id" data-placeholder="Choose a Type...">
                                         <option></option>
-                                        @foreach ( $type as $ty )
-                                        <option value="{{ $ty->id }}">{{ $ty->name }}</option>
+                                        @foreach ($type as $ty)
+                                            <option value="{{ $ty->id }}">{{ $ty->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -101,17 +101,19 @@
 
                        </div>
                        <div class="row py-3">
+
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Property Status</label>
-                                <select class="form-control" data-toggle="select2" name="type_id" data-placeholder="Choose a Country...">
+                                <select class="form-control" data-toggle="select2" name="status_id" data-placeholder="Choose a Status...">
                                     <option></option>
-                                    @foreach ( $status as $ty )
-                                    <option value="{{ $ty->id }}">{{ $ty->name }}</option>
+                                    @foreach ($status as $ty)
+                                        <option value="{{ $ty->id }}">{{ $ty->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
                         </div>
+
                         <div class="col-md-4">
                             <div class="form-group ">
                                 <label for="image" class="image">Property Images</label>

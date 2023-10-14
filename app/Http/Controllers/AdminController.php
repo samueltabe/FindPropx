@@ -131,6 +131,7 @@ class AdminController extends Controller
     }
     public function houseAdd(Request $req )
     {
+         //dd($req->all());
          $house = new House;
          $house->title=$req->input('title');
          $house->state_id=$req->input('state_id');
