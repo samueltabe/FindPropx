@@ -52,14 +52,14 @@
                        <div class="row py-3">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Price</label>
+                                    <label for="exampleInputEmail1">Price Per Month</label>
                                     <input type="text" class="form-control" name="price">
                                 </div>
                             </div>
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Area</label>
+                                    <label for="exampleInputEmail1">Size</label>
                                     <input type="text" class="form-control" name="area">
                                 </div>
                             </div>

@@ -161,7 +161,7 @@ Breadcrumb -->
                         <li><b>Garage Size:</b> 458 SqFt</li>
                         <li><b>Year Built:</b> 2019-01-09</li>
                         <li><b>Property Type:</b> {{ $houses->types->name }}</li>
-                        <li><b>Property Status:</b> {{ $houses->status->name }}</li>
+                        <li><b>Property Status:</b> {{ $houses->status->name ?? 'N/A' }}</li>
                       </ul>
                     </div>
                   </div>
@@ -514,8 +514,10 @@ Breadcrumb -->
             <div class="property-image bg-overlay-gradient-04">
               <img class="img-fluid" src="/{{ $ty->images[0]->img_url?? 'no image' }}" style="height: 300px" alt="">
               <div class="property-lable">
-                <span class="badge badge-md bg-primary">Bungalow</span>
-                <span class="badge badge-md bg-info">Sale </span>
+                {{-- <span class="badge badge-md bg-primary">Bungalow</span>
+                <span class="badge badge-md bg-info">Sal </span> --}}
+                <span class="badge badge-md bg-primary">{{ $ty->types->name ?? '' }}</span>
+                <span class="badge badge-md bg-info">{{ $ty->status->name ?? '' }} </span>
               </div>
               <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
               <div class="property-agent">

@@ -117,7 +117,7 @@ class AdminController extends Controller
     {
         // $agentName= Auth::user()->name;
         // $house = House::latest()->with(['images', 'types'])->where('agent', $agentName)->get();
-        $house = House::latest()->with(['images', 'types', 'users', 'states', 'lgas'])->get();
+        $house = House::orderBy('created_at', 'desc')->with(['images', 'types', 'users', 'states', 'lgas'])->get();
         return view('admin.house.index', compact('house'));
     }
     public function HouseCreate()
@@ -131,7 +131,6 @@ class AdminController extends Controller
     }
     public function houseAdd(Request $req )
     {
-         //dd($req->all());
          $house = new House;
          $house->title=$req->input('title');
          $house->state_id=$req->input('state_id');
@@ -149,7 +148,6 @@ class AdminController extends Controller
          $house->video=$req->input('video');
 
          $house->save();
-        // dd($house);
 
         // Upload and attach images to the product
         if ($req->hasFile('images')) {
@@ -157,7 +155,7 @@ class AdminController extends Controller
             foreach ($images as $image) {
                 $filename = $image->getClientOriginalName();
 
-                $path = $image->move('public/assets/upload/house/images', rand(100, 999) .$filename);
+                $path = $image->move('upload/house/images/', rand(100, 999) .$filename);
 
                 $productImage = new Image();
                 $productImage->house_id = $house->id;
@@ -216,7 +214,7 @@ class AdminController extends Controller
            foreach ($images as $image) {
                $filename = $image->getClientOriginalName();
 
-               $path = $image->move('public/assets/upload/house/images', rand(100, 999) .$filename);
+               $path = $image->move('upload/house/images/', rand(100, 999) .$filename);
 
                $productImage = Image::find($id);
                $productImage->house_id = $house->id;
@@ -235,19 +233,43 @@ class AdminController extends Controller
         return redirect('/admin/house')->with('message', 'House details successfully Added');
     }
 
+    // public function HouseDelete($id)
+    // {
+    //     $house = House::find($id);
+    //     $destination = 'upload/house/images/'.$house->image;
+    //     if(File::exists($destination)){
+
+    //         File::delete($destination);
+
+    //         $house->images()->delete();
+
+    //     }
+    //     $house->delete();
+    //     return redirect('/admin/house')->with('message', 'House details successfully Deleted');
+    // }
     public function HouseDelete($id)
     {
         $house = House::find($id);
-        $destination = 'upload/house/images'.$house->image;
-        if(File::exists($destination)){
 
-            File::delete($destination);
+        if ($house) {
+            foreach ($house->images as $image) {
+                $destination = public_path('upload/house/images/' . $image->img_url);
+                if (File::exists($destination)) {
+                    File::delete($destination);
+                }
 
+                $image->delete();
+            }
+
+            $house->delete();
+
+            return redirect('/admin/house')->with('message', 'House details and images successfully deleted');
         }
-        $house->images()->forceDelete();
-        $house->delete();
-        return redirect('/admin/house')->with('message', 'House details successfully Deleted');
+
+        return redirect('/admin/house')->with('message', 'House not found');
     }
+
+
 
 
     public function feature()
