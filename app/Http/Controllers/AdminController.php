@@ -10,8 +10,9 @@ use App\Models\Image;
 use App\Models\State;
 use App\Models\Status;
 use App\Models\Feature;
-use App\Models\HouseFeature;
 use App\Models\Message;
+use Illuminate\Support\Str;
+use App\Models\HouseFeature;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -156,7 +157,11 @@ class AdminController extends Controller
             foreach ($images as $image) {
                 $filename = $image->getClientOriginalName();
 
-                $path = $image->move('upload/house/images/', rand(100, 999) .$filename);
+                // Generate a random string for the filename
+                $randomFilename = Str::random(10) . '_' . $filename;
+
+                // Use the storeAs method to store the image with the generated filename
+                $path = $image->storeAs('upload/house/images', $randomFilename, 'public');
 
                 $productImage = new Image();
                 $productImage->house_id = $house->id;
