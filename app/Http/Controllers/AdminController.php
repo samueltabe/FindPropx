@@ -10,10 +10,10 @@ use App\Models\Image;
 use App\Models\State;
 use App\Models\Status;
 use App\Models\Feature;
-use App\Models\Message;
-use Illuminate\Support\Str;
 use App\Models\HouseFeature;
+use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -152,23 +152,35 @@ class AdminController extends Controller
          $house->save();
 
         // Upload and attach images to the product
+        // if ($req->hasFile('images')) {
+        //     $images = $req->file('images');
+        //     foreach ($images as $image) {
+        //         $filename = $image->getClientOriginalName();
+
+        //         $path = $image->move('upload/house/images/', rand(100, 999) .$filename);
+
+        //         $productImage = new Image();
+        //         $productImage->house_id = $house->id;
+        //         $productImage->img_url = $path;
+        //         $productImage->save();
+        //     }
+        // }
+
         if ($req->hasFile('images')) {
             $images = $req->file('images');
             foreach ($images as $image) {
                 $filename = $image->getClientOriginalName();
-
-                // Generate a random string for the filename
-                $randomFilename = Str::random(10) . '_' . $filename;
-
-                // Use the storeAs method to store the image with the generated filename
-                $path = $image->storeAs('upload/house/images', $randomFilename, 'public');
-
+                $randomString = Str::random(10);
+                $uniqueFilename = $randomString . '_' . time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('upload/house/images/'), $uniqueFilename);
                 $productImage = new Image();
                 $productImage->house_id = $house->id;
-                $productImage->img_url = $path;
+                $productImage->img_url = 'upload/house/images/' . $uniqueFilename;
                 $productImage->save();
             }
         }
+
+
 
         for ($i=0; $i < count($req->features); $i++) {
             HouseFeature::create([
