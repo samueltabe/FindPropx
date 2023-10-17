@@ -227,21 +227,20 @@ class AdminController extends Controller
        // dd($house);
 
        // Upload and attach images to the product
+
         if ($req->hasFile('images')) {
             $images = $req->file('images');
             foreach ($images as $image) {
                 $filename = $image->getClientOriginalName();
-
-                $path = $image->move('upload/house/images/', rand(100, 999) . $filename);
-
-                // Check if the Image record exists or create a new one
-                $productImage = Image::firstOrCreate(['house_id' => $house->id]);
-
-                // Update the Image record
-                $productImage->img_url = $path;
+                $randomString = Str::random(10);
+                $uniqueFilename = $randomString . '_' . time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('upload/house/images/'), $uniqueFilename);
+                $productImage = Image::firstOrNew(['house_id' => $house->id]);
+                $productImage->img_url = 'upload/house/images/' . $uniqueFilename;
                 $productImage->save();
             }
         }
+
 
 
        for ($i=0; $i < count($req->features); $i++) {
