@@ -271,10 +271,10 @@
             <div class="agent text-center">
                 <div class="agent-detail">
                     <div class="agent-avatar avatar avatar-xllll">
-                    <img class="img-fluid rounded-circle" src="{{ asset("assets/images/teams/gloria.jpg") }}" alt="">
+                    <img class="img-fluid rounded-circle" src="{{ asset("assets/images/teams/ike.jpg") }}" alt="">
                     </div>
                     <div class="agent-info">
-                    <h6 class="mb-0"> <a href="agent-detail.html">Gloria .O. chime</a></h6>
+                    <h6 class="mb-0"> <a href="agent-detail.html">Ike Chinyere. P.</a></h6>
                     <span class="text-primary font-sm">Relationship Manager</span>
                     <p class="mt-3 mb-0"></p>
                     </div>
