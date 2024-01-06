@@ -132,7 +132,6 @@ class AdminController extends Controller
     }
     public function houseAdd(Request $req )
     {
-         //dd($req->all());
          $house = new House;
          $house->title=$req->input('title');
          $house->state_id=$req->input('state_id');
@@ -151,21 +150,6 @@ class AdminController extends Controller
 
          $house->save();
 
-        // Upload and attach images to the product
-        // if ($req->hasFile('images')) {
-        //     $images = $req->file('images');
-        //     foreach ($images as $image) {
-        //         $filename = $image->getClientOriginalName();
-
-        //         $path = $image->move('upload/house/images/', rand(100, 999) .$filename);
-
-        //         $productImage = new Image();
-        //         $productImage->house_id = $house->id;
-        //         $productImage->img_url = $path;
-        //         $productImage->save();
-        //     }
-        // }
-
         if ($req->hasFile('images')) {
             $images = $req->file('images');
             foreach ($images as $image) {
@@ -179,8 +163,6 @@ class AdminController extends Controller
                 $productImage->save();
             }
         }
-
-
 
         for ($i=0; $i < count($req->features); $i++) {
             HouseFeature::create([

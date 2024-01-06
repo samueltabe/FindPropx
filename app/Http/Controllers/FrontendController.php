@@ -23,18 +23,6 @@ class FrontendController extends Controller
         $type = Type::all();
         $state = State::all();
         $status = Status::all();
-        // $house = House::findorFail($houseId);
-        // $houseUrl = route('house.show', ['houseId' => $house->id]);
-        // $shareComponent = \Share::page(
-        //     $houseUrl,
-        //      'Your share text comes here',
-        // )
-        // ->facebook()
-        // ->twitter()
-        // ->linkedin()
-        // ->telegram()
-        // ->whatsapp()
-        // ->reddit();
         return view('index' , compact('places','houses', 'type', 'state', 'status'));
     }
 
