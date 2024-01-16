@@ -98,7 +98,7 @@
                                                     @if(Auth::user()->state)
                                                         <p class="text-muted">{{ Auth::user()->state->name }}</p>
                                                     @else
-                                                        <p>You have not selected a state yet.</p>
+                                                        <p class="text-danger">You have not selected a state yet.</p>
                                                     @endif
                                                 </div>
                                             </div>
@@ -111,7 +111,7 @@
                                                     @if(Auth::user()->lga)
                                                         <p class="text-muted">{{ Auth::user()->lga->local_name }}</p>
                                                     @else
-                                                        <p>You have not selected a LGA yet.</p>
+                                                        <p class="text-danger">You have not selected a LGA yet.</p>
                                                     @endif
                                                 </div>
                                             </div>
