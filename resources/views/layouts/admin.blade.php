@@ -45,7 +45,7 @@
 
                     <li class="dropdown notification-list mr-5">
                         <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                            <img src="{{ asset('upload/admin/'.Auth::user()->image) }}" alt="user-image" class="rounded-circle">
+                            <img src="{{ asset('upload/admin/images/'.Auth::user()->image) }}" alt="user-image" class="rounded-circle">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                             <!-- item-->

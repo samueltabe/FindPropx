@@ -7,7 +7,7 @@
 
             <div class="user-box">
                 <div class="float-left">
-                    <img src="{{ asset('upload/admin-dp/'.Auth::user()->image) }}" alt="" class="avatar-md rounded-circle">
+                    <img src="{{ asset('upload/admin/images/'.Auth::user()->image) }}" alt="" class="avatar-md rounded-circle">
                 </div>
                 <div class="user-info">
                     <div class="dropdown">

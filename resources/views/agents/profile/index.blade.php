@@ -63,7 +63,7 @@
                                                 <div class="about-info-p my-1">
                                                     <strong>Image</strong>
                                                     <br>
-                                                    <img src="{{ asset('upload/admin/'.auth::user()->image) }}" class="rounded-circle" width="70px" height="70px" alt="user image">
+                                                    <img src="{{ asset('upload/admin/images/'.auth::user()->image) }}" class="rounded-circle" width="70px" height="70px" alt="user image">
                                                 </div>
                                             </div>
                                         </div>

@@ -41,7 +41,7 @@ class AgentController extends Controller
         $user->lga_id=$req->lga_id;
         if($req->hasfile('image')){
 
-            $destination = 'upload/admin'.$user->image;
+            $destination = 'upload/admin/images'.$user->image;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -49,7 +49,7 @@ class AgentController extends Controller
             $file = $req->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'.$extention;
-            $file->move('upload/admin', $filename);
+            $file->move('upload/admin/images', $filename);
             $user->image = $filename;
         }
 
