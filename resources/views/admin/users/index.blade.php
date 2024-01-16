@@ -47,8 +47,8 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->phone ?? '' }}</td>
                                         <td>{{ $user->email }}</td>
-                                        <td>{{ $user->lga->local_name }}</td>
-                                        <td>{{ $user->state->name }}</td>
+                                        <td>{{ $user->lga->local_name ?? '' }}</td>
+                                        <td>{{ $user->state->name ?? '' }}</td>
                                         <td>
                                             @if($user->verified)
                                                 <span class="badge badge-success">Verified</span>
