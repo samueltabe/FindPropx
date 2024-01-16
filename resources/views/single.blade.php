@@ -99,7 +99,7 @@ Breadcrumb -->
                 <div class="d-flex align-items-center p-4 border border-bottom-0">
                   <div class="agent-contact-avatar me-3">
                     @if (optional($houses->users)->image)
-                        <img class="img-fluid rounded-circle avatar avatar-xl" src="{{ asset('upload/admin-dp/'.$houses->users->image)?? '' }}" alt="">
+                        <img class="img-fluid rounded-circle avatar avatar-xl" src="{{ asset('upload/admin/images/'.$houses->users->image)?? '' }}" alt="">
                     @else
                         <img src="" alt="author-image" class="author__img">
                     @endif
@@ -522,7 +522,7 @@ Breadcrumb -->
               <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
               <div class="property-agent">
                 <div class="property-agent-image">
-                  <img class="img-fluid" src="{{ asset('upload/admin-dp/'.$ty->users->image)?? '' }}" alt="">
+                  <img class="img-fluid" src="{{ asset('upload/admin/images/'.$ty->users->image)?? '' }}" alt="">
                 </div>
                 <div class="property-agent-info">
                   <a class="property-agent-name" href="{{ url('single/'.$ty->id) }}">{{ $ty->users->name }}</a>

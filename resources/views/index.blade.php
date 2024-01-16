@@ -227,7 +227,7 @@ Featured properties-->
               <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
               <div class="property-agent">
                 <div class="property-agent-image">
-                  <img class="img-fluid" src="{{ asset('upload/admin-dp/'.$house->users->image)?? '' }}" alt="">
+                  <img class="img-fluid" src="{{ asset('upload/admin/images/'.$house->users->image)?? '' }}" alt="">
                 </div>
                 <div class="property-agent-info">
                   <a class="property-agent-name" href="#">{{$house->users->name}}</a>
