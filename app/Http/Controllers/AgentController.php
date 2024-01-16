@@ -39,17 +39,20 @@ class AgentController extends Controller
         $user->bio=$req->bio;
         $user->state_id=$req->state_id;
         $user->lga_id=$req->lga_id;
-        if($req->hasfile('image')){
-
-            $destination = 'upload/admin/images'.$user->image;
-            if(File::exists($destination)){
-                File::delete($destination);
+        if ($req->hasFile('image')) {
+            $destination = base_path('public/upload/admin/images');
+            if ($user->image) {
+                $existingImagePath = $destination . '/' . $user->image;
+                if (File::exists($existingImagePath)) {
+                    File::delete($existingImagePath);
+                }
             }
 
             $file = $req->file('image');
-            $extention = $file->getClientOriginalExtension();
-            $filename = time().'.'.$extention;
-            $file->move('upload/admin/images', $filename);
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move($destination, $filename);
+
             $user->image = $filename;
         }
 

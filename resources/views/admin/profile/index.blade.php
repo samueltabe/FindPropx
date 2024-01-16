@@ -199,7 +199,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="RePassword">Your Image</label>
-                                        <img src="{{ asset('upload/admin/'.auth::user()->image) }}" width="50px" height="40px" class="my-2" alt="image">
+                                        <img src="{{ asset('upload/admin/images/'.auth::user()->image) }}" width="50px" height="40px" class="my-2" alt="image">
                                         <input class="form-inline" accept="image/*" type="file" name="image" multiple>
                                     </div>
 
