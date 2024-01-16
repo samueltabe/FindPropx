@@ -42,7 +42,7 @@
 
                                     <tr>
                                         <td>
-                                            <img src="{{ asset('upload/admin-dp/'.$user->image) }}" width="50" alt="">
+                                            <img src="{{ asset('upload/admin/'.$user->image) }}" width="50" alt="">
                                         </td>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->phone ?? '' }}</td>

@@ -57,7 +57,7 @@ class AdminController extends Controller
         $user->lga_id=$req->lga_id;
         if($req->hasfile('image')){
 
-            $destination = 'upload/admin-dp'.$user->image;
+            $destination = 'upload/admin'.$user->image;
             if(File::exists($destination)){
                 File::delete($destination);
             }
@@ -65,7 +65,7 @@ class AdminController extends Controller
             $file = $req->file('image');
             $extention = $file->getClientOriginalExtension();
             $filename = time().'.'.$extention;
-            $file->move('upload/admin-dp', $filename);
+            $file->move('upload/admin', $filename);
             $user->image = $filename;
         }
 
