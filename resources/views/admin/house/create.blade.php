@@ -50,22 +50,28 @@
                            </div>
                        </div>
                        <div class="row py-3">
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Price Per Month</label>
+                                    <label for="exampleInputEmail1">Rented / Price Per Month</label>
                                     <input type="text" class="form-control" name="price">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Size</label>
-                                    <input type="text" class="form-control" name="area" placeholder="Sqft">
+                                    <label for="exampleInputEmail1">Price For Sale</label>
+                                    <input type="text" class="form-control" name="sale_price">
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Size</label>
+                                    <input type="text" class="form-control" name="area">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Rooms</label>
-                                    <input type="text" class="form-control" name="rooms" placeholder="rooms">
+                                    <input type="text" class="form-control" name="rooms" >
                                 </div>
                             </div>
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">

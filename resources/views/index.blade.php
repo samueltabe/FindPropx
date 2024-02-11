@@ -32,8 +32,8 @@
     <!--=================================
     banner -->
 
-  <!--property Type -->
-  <section class="property-search-field-top position-reletive d-none d-md-block">
+  <!--search property -->
+  {{-- <section class="property-search-field-top position-reletive d-none d-md-block">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -139,8 +139,8 @@
         </div>
       </div>
     </div>
-  </section>
-  <!--Property Types -->
+  </section> --}}
+  <!--Psearch roperty  -->
 
   <!--location -->
   {{-- <section class="space-ptb">
@@ -241,7 +241,7 @@ Featured properties-->
                 </div>
               </div>
               <div class="property-agent-popup">
-                <a href="#"><i class="fas fa-camera"></i> 06</a>
+                {{-- <a href="#"><i class="fas fa-camera"></i> 06</a> --}}
               </div>
             </div>
             <div class="property-details">
@@ -252,8 +252,8 @@ Featured properties-->
                 <div class="property-price">₦{{ $house->price }}<span> / month</span> </div>
                 <ul class="property-info list-unstyled d-flex">
                   <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Rooms<span>{{ $house->rooms }}</span></li>
-                  <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
-                  <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>{{ $house->area }}</span></li>
+                  {{-- <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li> --}}
+                  <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>Size<span>{{ $house->area }}</span></li>
                 </ul>
               </div>
               <div class="property-btn">

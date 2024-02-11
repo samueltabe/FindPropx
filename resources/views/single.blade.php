@@ -148,24 +148,24 @@ Breadcrumb -->
                   <div class="row mb-3">
                     <div class="col-sm-6">
                       <ul class="property-list list-unstyled">
-                        <li><b>Property ID:</b> RV151</li>
+                        {{-- <li><b>Property ID:</b> RV151</li> --}}
                         <li><b>Price:</b> ₦{{ $houses->price }}</li>
-                        <li><b>Property Size:</b> {{ $houses->area ?? 'N/A' }} Sq Ft</li>
+                        <li><b>Property Size:</b> {{ $houses->area ?? 'N/A' }} </li>
                         <li><b>Bedrooms:</b> {{ $houses->rooms ?? 'N/A' }}</li>
                         <li><b>Bathrooms:</b> 2</li>
                       </ul>
                     </div>
                     <div class="col-sm-6">
                       <ul class="property-list list-unstyled">
-                        <li><b>Garage:</b> 1</li>
+                        {{-- <li><b>Garage:</b> 1</li>
                         <li><b>Garage Size:</b> 458 SqFt</li>
-                        <li><b>Year Built:</b> 2019-01-09</li>
+                        <li><b>Year Built:</b> 2019-01-09</li> --}}
                         <li><b>Property Type:</b> {{ $houses->types->name }}</li>
                         <li><b>Property Status:</b> {{ $houses->status->name ?? 'N/A' }}</li>
                       </ul>
                     </div>
                   </div>
-                  <h6 class="text-primary mb-3 mb-sm-0">Additional details</h6>
+                  {{-- <h6 class="text-primary mb-3 mb-sm-0">Additional details</h6>
                   <div class="row">
                     <div class="col-sm-6">
                       <ul class="property-list list-unstyled mb-0">
@@ -181,7 +181,7 @@ Breadcrumb -->
                         <li><b>Equipment:</b> Grill - Gas - light</li>
                       </ul>
                     </div>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
             </div>
@@ -233,7 +233,7 @@ Breadcrumb -->
                         <li><b>City:</b> {{$houses->city}}</li>
                         <li><b>LGA:</b> {{$houses->lgas->local_name}}</li>
                         <li><b>State:</b>{{$houses->states->name}}</li>
-                        <li><b>Area:</b> Embarcadero</li>
+                        {{-- <li><b>Area:</b> Embarcadero</li> --}}
                       </ul>
                     </div>
                     {{-- <div class="col-sm-6">
@@ -546,11 +546,11 @@ Breadcrumb -->
                 <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>{{ $ty->lgas->local_name }}, {{ $ty->states->name }}</span>
                 <span class="property-agent-date"><i class="far fa-clock fa-md"></i>{{ $ty->created_at->diffForHumans() }}</span>
                 <div class="property-price">₦{{ $ty->price }}<span> / month</span> </div>
-                <ul class="property-info list-unstyled d-flex">
+                {{-- <ul class="property-info list-unstyled d-flex">
                   <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>1</span></li>
                   <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
                   <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>145m</span></li>
-                </ul>
+                </ul> --}}
               </div>
               <div class="property-btn">
                 <a class="property-link" href="{{ url('single/'.$ty->id) }}">See Details</a>
