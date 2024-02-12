@@ -205,7 +205,7 @@ breadcrumb -->
               </div>
               @foreach ($recent as $re )
               <div class="recent-list-item">
-                <img class="img-fluid" src="/{{ $re->images[0]->img_url?? 'no image' }}" style="width: 100px" alt="">
+                <img class="img-fluid" src="/{{ $re->images[0]->img_url?? 'no image' }}" style="width: 100px; " alt="">
                 <div class="recent-list-item-info">
                   <a class="address mb-2" href="property-detail-style-01.html">{{ $re->title }}</a>
                   {{-- <span class="text-primary">₦{{ $re->price }} </span> --}}
@@ -268,7 +268,7 @@ breadcrumb -->
             <div class="col-sm-6">
               <div class="property-item">
                 <div class="property-image bg-overlay-gradient-04">
-                  <img class="img-fluid" src="/{{ $house->images[0]->img_url?? 'no image' }}" style="height: 300px" alt="">
+                  <img class="img-fluid" src="/{{ $house->images[0]->img_url?? 'no image' }}" style="height: 300px; width:500px" alt="">
                   <div class="property-lable">
                     <span class="badge badge-md bg-primary">{{ $house->types->name ?? '' }}</span>
                     <span class="badge badge-md bg-info">{{ $house->status->name ?? '' }} </span>
