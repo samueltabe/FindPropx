@@ -208,7 +208,7 @@ breadcrumb -->
                 <img class="img-fluid" src="/{{ $re->images[0]->img_url?? 'no image' }}" style="width: 100px" alt="">
                 <div class="recent-list-item-info">
                   <a class="address mb-2" href="property-detail-style-01.html">{{ $re->title }}</a>
-                  <span class="text-primary">₦{{ $re->price }} </span>
+                  {{-- <span class="text-primary">₦{{ $re->price }} </span> --}}
                 </div>
               </div>
               @endforeach
@@ -291,7 +291,6 @@ breadcrumb -->
                     </div>
                   </div>
                   <div class="property-agent-popup">
-                    <a href="#"><i class="fas fa-camera"></i> 06</a>
                   </div>
                 </div>
                 <div class="property-details">
@@ -299,11 +298,10 @@ breadcrumb -->
                     <h5 class="property-title"><a href="{{ url('single/'.$house->id) }}">{{ $house->title }} </a></h5>
                     <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>{{ $house->lgas->local_name }},&nbsp{{  $house->states->name }}</span>
                     <span class="property-agent-date"><i class="far fa-clock fa-md"></i>{{$house->created_at->diffForHumans()}}</span>
-                    <div class="property-price">₦{{ $house->price }}<span> / month</span> </div>
+                    {{-- <div class="property-price">₦{{ $house->price }}<span> / month</span> </div> --}}
                     <ul class="property-info list-unstyled d-flex">
                       <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Rooms<span>{{ $house->rooms }}</span></li>
-                      <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
-                      <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>{{ $house->area }}</span></li>
+                      <li class="flex-fill property-m-sqft"><i class="far fa-square"></i><span>{{ $house->area }}</span></li>
                     </ul>
                   </div>
                   <div class="property-btn">

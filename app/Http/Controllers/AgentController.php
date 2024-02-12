@@ -12,6 +12,7 @@ use App\Models\Status;
 use App\Models\Feature;
 use App\Models\HouseFeature;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 
@@ -161,19 +162,32 @@ class AgentController extends Controller
        // dd($house);
 
        // Upload and attach images to the product
+    //    if ($req->hasFile('images')) {
+    //        $images = $req->file('images');
+    //        foreach ($images as $image) {
+    //            $filename = $image->getClientOriginalName();
+
+    //            $path = $image->move('upload/house/images', rand(100, 999) .$filename);
+
+    //            $productImage = Image::find($id);
+    //            $productImage->house_id = $house->id;
+    //            $productImage->img_url = $path;
+    //            $productImage->save();
+    //        }
+    //     }
+
        if ($req->hasFile('images')) {
-           $images = $req->file('images');
-           foreach ($images as $image) {
-               $filename = $image->getClientOriginalName();
-
-               $path = $image->move('upload/house/images', rand(100, 999) .$filename);
-
-               $productImage = Image::find($id);
-               $productImage->house_id = $house->id;
-               $productImage->img_url = $path;
-               $productImage->save();
-           }
-       }
+            $images = $req->file('images');
+            foreach ($images as $image) {
+                $filename = $image->getClientOriginalName();
+                $randomString = Str::random(10);
+                $uniqueFilename = $randomString . '_' . time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('upload/house/images/'), $uniqueFilename);
+                $productImage = Image::firstOrNew(['house_id' => $house->id]);
+                $productImage->img_url = 'upload/house/images/' . $uniqueFilename;
+                $productImage->save();
+            }
+        }
 
        for ($i=0; $i < count($req->features); $i++) {
            HouseFeature::updated([

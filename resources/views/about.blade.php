@@ -46,7 +46,7 @@
                 experience for both buyers and sellers.
             </p>
             <div class="popup-video">
-              <a class="popup-icon popup-youtube" href="https://youtube.com/shorts/2keGhCx4n_Q?si=YTltCZRWC2sQtzhc"> <i class="flaticon-play-button"></i> </a>
+              <a class="popup-icon popup-youtube" href="https://www.youtube.com/watch?v=Mgsm4RaXYpM"> <i class="flaticon-play-button"></i> </a>
             </div>
           </div>
         </div>

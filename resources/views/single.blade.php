@@ -149,10 +149,10 @@ Breadcrumb -->
                     <div class="col-sm-6">
                       <ul class="property-list list-unstyled">
                         {{-- <li><b>Property ID:</b> RV151</li> --}}
-                        <li><b>Price:</b> ₦{{ $houses->price }}</li>
+                        <li><b>Rented Price Per Month:</b> ₦{{ $houses->price }}</li>
+                        <li><b>Sale Price:</b> ₦{{ $houses->sale_price }}</li>
                         <li><b>Property Size:</b> {{ $houses->area ?? 'N/A' }} </li>
                         <li><b>Bedrooms:</b> {{ $houses->rooms ?? 'N/A' }}</li>
-                        <li><b>Bathrooms:</b> 2</li>
                       </ul>
                     </div>
                     <div class="col-sm-6">
@@ -289,17 +289,21 @@ Breadcrumb -->
             </div> --}}
             <hr class="mt-4 mb-4 mb-sm-5 mt-sm-5">
             <div class="property-video">
-              <div class="row">
-                <div class="col-sm-3 mb-3 mb-sm-0">
-                  <h5>Property video</h5>
-                </div>
-                <div class="col-lg-4">
-                    <div class="popup-video">
-                      <a  class="popup-icon  d-flex justify-content-lg-end" target="_blank" href="{{ $houses->video }}"> <span class="pe-3"> Play Video</span> <i class="flaticon-play-button"></i> </a>
+                <div class="row">
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                    <h5>Property video</h5>
+                  </div>
+                  <div class="col-sm-9">
+                    <div class="embed-responsive embed-responsive-16by9">
+                      {{-- <iframe width="546" height="315" src="https://www.youtube.com/embed/Mgsm4RaXYpM?si=aIZcMzsq12dlKh9Y" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                       --}}
+
+
+                       <iframe width="560" height="315" src="{{$houses->video ?? 'No Video'}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                   </div>
+                </div>
               </div>
-            </div>
             {{--<hr class="mt-4 mb-4 mb-sm-5 mt-sm-5">
              <div class="property-walk-score">
               <div class="row">
@@ -537,7 +541,7 @@ Breadcrumb -->
                 </div>
               </div>
               <div class="property-agent-popup">
-                <a href="#"><i class="fas fa-camera"></i> 06</a>
+                {{-- <a href="#"><i class="fas fa-camera"></i> 06</a> --}}
               </div>
             </div>
             <div class="property-details">
