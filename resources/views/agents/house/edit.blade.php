@@ -59,7 +59,7 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Sale Price</label>
-                                    <input type="text" value="{{ $house->asle_price }}" class="form-control" name="sale_price">
+                                    <input type="text" value="{{ $house->sale_price }}" class="form-control" name="sale_price">
                                 </div>
                             </div>
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">

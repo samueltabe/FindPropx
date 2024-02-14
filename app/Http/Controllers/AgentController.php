@@ -89,7 +89,7 @@ class AgentController extends Controller
          $house->status_id=$req->input('status_id');
          $house->description=$req->input('description');
          $house->price=$req->input('price');
-         $house->price=$req->input('sale_price');
+         $house->sale_price=$req->input('sale_price');
          $house->rooms=$req->input('rooms');
          $house->city=$req->input('city');
          $house->user_id=$req->input('user_id');
@@ -149,7 +149,7 @@ class AgentController extends Controller
         $house->status_id=$req->input('status_id');
         $house->description=$req->input('description');
         $house->price=$req->input('price');
-        $house->price=$req->input('sale_price');
+        $house->sale_price=$req->input('sale_price');
         $house->rooms=$req->input('rooms');
         $house->city=$req->input('city');
         $house->user_id=$req->input('user_id');
@@ -159,7 +159,7 @@ class AgentController extends Controller
         $house->video=$req->input('video');
 
         $house->save();
-       // dd($house);
+    //    dd($house);
 
        // Upload and attach images to the product
     //    if ($req->hasFile('images')) {
