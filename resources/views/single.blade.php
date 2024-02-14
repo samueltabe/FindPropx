@@ -208,11 +208,6 @@ Breadcrumb -->
                       <ul class="property-list-style-2 list-unstyled mb-0">
                         @foreach ($features as $feature)
                         <li>{{ $feature->name }}</li>
-                      </ul>
-                    </div>
-                    <div class="col-sm-6">
-                      <ul class="property-list-style-2 list-unstyled mb-0">
-
                         @endforeach
                       </ul>
                     </div>
