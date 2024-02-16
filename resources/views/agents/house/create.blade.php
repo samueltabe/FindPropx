@@ -52,7 +52,7 @@
                        <div class="row py-3">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Price Per Month</label>
+                                    <label for="exampleInputEmail1">Rent Price Per Month</label>
                                     <input type="text" class="form-control" name="price">
                                 </div>
                             </div>

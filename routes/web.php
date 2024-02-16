@@ -40,8 +40,9 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/agents/house', [App\Http\Controllers\AgentController::class, 'House']);
     Route::get('/agents/house/create', [App\Http\Controllers\AgentController::class, 'HouseCreate']);
     Route::post('/agents/house/add', [App\Http\Controllers\AgentController::class, 'HouseAdd']);
-    Route::get('agents/house/edit/{id}', [App\Http\Controllers\AgentController::class, 'HouseEdit']);
-    Route::put('agents/house/update/{id}', [App\Http\Controllers\AgentController::class, 'HouseUpdate']);
+    Route::get('/agents/house/edit/{id}', [App\Http\Controllers\AgentController::class, 'HouseEdit']);
+    Route::get('/agents/house/show/{id}', [App\Http\Controllers\AgentController::class, 'HouseShow']);
+    Route::put('/agents/house/update/{id}', [App\Http\Controllers\AgentController::class, 'HouseUpdate']);
     Route::get('/agent/house/delete/{id}', [App\Http\Controllers\AgentController::class, 'HouseDelete']);
 });
 

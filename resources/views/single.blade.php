@@ -134,7 +134,7 @@ Breadcrumb -->
               <div class="owl-carousel" data-animateOut="fadeOut" data-nav-arrow="true" data-items="1" data-md-items="1" data-sm-items="1" data-xs-items="1" data-xx-items="1" data-space="0" data-loop="true">
                 @foreach($houses->images as $image)
                 <div class="item{{ $loop->first ? ' active' : '' }}">
-                    <a class="portfolio-img" href="/{{ $image->img_url }}"><img class="img-fluid" src="/{{ $image->img_url }}" style="width: 100%; height: 500px;" alt=""></a>
+                    <a class="portfolio-img" href="/{{ $image->img_url }}"><img class="img-fluid" src="{{ asset($image->img_url) }}" style="width: 100%; height: 500px;" alt=""></a>
                 </div>
                 @endforeach
               </div>

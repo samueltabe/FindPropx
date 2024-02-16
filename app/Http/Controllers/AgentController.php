@@ -138,6 +138,17 @@ class AgentController extends Controller
         return view('agents.house.edit', compact('house', 'type','features','state','lga', 'status'));
     }
 
+    public function houseShow($id)
+    {
+        $type = Type::all();
+        $features = Feature::all();
+        $state = State::all();
+        $lga = Lga::all();
+        $house = House::find($id);
+        $status = Status::all();
+        return view('agents.house.show', compact('house', 'type','features','state','lga', 'status'));
+    }
+
     public function HouseUpdate(Request $req, $id)
     {
         //dd($req->all());

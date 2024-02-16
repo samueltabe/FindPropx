@@ -14,4 +14,9 @@ class Feature extends Model
     {
         return $this ->belongsTo(House::class);
     }
+
+    public function houseFeatures()
+    {
+        return $this->hasMany(HouseFeature::class);
+    }
 }

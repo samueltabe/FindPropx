@@ -52,7 +52,7 @@
                        <div class="row py-3">
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Price</label>
+                                    <label for="exampleInputEmail1">Rent Price Per Month</label>
                                     <input type="text" value="{{ $house->price }}" class="form-control" name="price">
                                 </div>
                             </div>
@@ -135,12 +135,19 @@
                        <div class="row py-3">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <div class="checkbox checkbox-primary">
+                                {{-- <div class="checkbox checkbox-primary">
                                     @foreach ($features as $feature)
                                         <input type="checkbox" name="features[]" value="{{ $feature->id }}" id="feature-{{ $feature->id }}">
                                         <label for="feature-{{ $feature->id }}">{{ $feature->name }}</label>
                                     @endforeach
-                                </div>
+                                </div> --}}
+                                @foreach ($features as $feature )
+                                <input type="checkbox" name="features[]" value="{{ $feature->id }}"
+
+                                {{count( $feature->houseFeatures->where('feature_id', $feature->id) )>0 ? 'checked':'' }}/>
+
+                                <label for="">{{ $feature->name }}</label>
+                                @endforeach
                             </div>
                         </div>
                        </div>

@@ -33,7 +33,8 @@
                                             <th>Name</th>
                                             <th>Status</th>
                                             <th>Agent</th>
-                                            <th>Price</th>
+                                            <th>Rent Price</th>
+                                            <th>Sales Price</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
@@ -50,7 +51,9 @@
                                         <td>{{ optional($hou->status)->name }}</td>
                                         <td>{{ optional($hou->users)->name }}</td>
                                         <td>{{ $hou->price }}</td>
+                                        <td>{{ $hou->sale_price }}</td>
                                         <td>
+                                            <a href="{{ url('agents/house/show/'.$hou->id) }}" class="btn btn-outline-success"><i class="ion ion-md-eye"></i></a>
                                             <a href="{{ url('agents/house/edit/'.$hou->id) }}" class="btn btn-outline-primary"><i class="mdi mdi-account-edit-outline"></i></a>
                                             <a href="{{ url('agent/house/delete/'.$hou->id) }}" class="btn btn-outline-danger"><i class="mdi mdi-delete"></i></a>
                                         </td>
