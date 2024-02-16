@@ -106,12 +106,12 @@ class AgentController extends Controller
             $images = $req->file('images');
             foreach ($images as $image) {
                 $filename = $image->getClientOriginalName();
-
-                $path = $image->move('upload/house/images', rand(100, 999) .$filename);
-
+                $randomString = Str::random(10);
+                $uniqueFilename = $randomString . '_' . time() . '.' . $image->getClientOriginalExtension();
+                $image->move(public_path('upload/house/images/'), $uniqueFilename);
                 $productImage = new Image();
                 $productImage->house_id = $house->id;
-                $productImage->img_url = $path;
+                $productImage->img_url = 'upload/house/images/' . $uniqueFilename;
                 $productImage->save();
             }
         }
@@ -170,24 +170,9 @@ class AgentController extends Controller
         $house->video=$req->input('video');
 
         $house->save();
-    //    dd($house);
 
-       // Upload and attach images to the product
-    //    if ($req->hasFile('images')) {
-    //        $images = $req->file('images');
-    //        foreach ($images as $image) {
-    //            $filename = $image->getClientOriginalName();
 
-    //            $path = $image->move('upload/house/images', rand(100, 999) .$filename);
-
-    //            $productImage = Image::find($id);
-    //            $productImage->house_id = $house->id;
-    //            $productImage->img_url = $path;
-    //            $productImage->save();
-    //        }
-    //     }
-
-       if ($req->hasFile('images')) {
+        if ($req->hasFile('images')) {
             $images = $req->file('images');
             foreach ($images as $image) {
                 $filename = $image->getClientOriginalName();
