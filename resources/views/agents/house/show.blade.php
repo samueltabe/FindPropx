@@ -89,13 +89,13 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">City</label>
-                                <h5>{{ $house->city }}</h5>
+                                <h5>{{ $house->city  }}</h5>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Status</label>
-                                <h5>{{ $house->status->name }}</h5>
+                                <h5>{{ $house->status->name ?? '' }}</h5>
                             </div>
                         </div>
 
