@@ -250,6 +250,11 @@ Featured properties-->
                 <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>{{ $house->lgas->local_name }},&nbsp{{  $house->states->name }}</span>
                 <span class="property-agent-date"><i class="far fa-clock fa-md"></i>{{$house->created_at->diffForHumans()}}</span>
                 {{-- <div class="property-price">₦{{ $house->price }}<span> / month</span> </div> --}}
+                @if(isset($house->sale_price))
+                    <div class="property-price">₦{{ $house->sale_price }}<span> / asking price</span> </div>
+                @else
+                    <div class="property-price">₦{{ $house->price }}<span> / month</span> </div>
+                @endif
                 <ul class="property-info list-unstyled d-flex">
                   <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Rooms<span>{{ $house->rooms }}</span></li>
                   {{-- <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li> --}}

@@ -1,38 +1,41 @@
 @extends('layouts.frontend')
 <style>
     div#social-links {
-        margin: 0px auto;
+        margin: 0 auto;
         max-width: 50%;
+        display: flex;
+        justify-content: center;
     }
-    div#social-links ul{
-        display: inline-block;
-        margin-left: -40px;
+    div#social-links ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
     }
     div#social-links ul li {
-        display: inline-block;
+        margin-right: 10px;
     }
     div#social-links ul li a {
-        display: inline-block;
         padding: 5px;
-        margin: 1px;
         font-size: 13px;
         color: #fff;
+        text-decoration: none;
     }
-    div#social-links ul li a:hover{
+    div#social-links ul li a:hover {
         color: #e5dddd;
         background-color: #E78C2D;
     }
-    .verify{
+    .verify {
         color: green;
         padding: 5px;
         border-radius: 5px;
     }
-    .unverify{
+    .unverify {
         color: rgba(212, 14, 14, 0.852);
         padding: 5px;
         border-radius: 5px;
     }
 </style>
+
 @section('content')
 
 <!--header -->
@@ -73,8 +76,12 @@ Breadcrumb -->
               <div class="mb-4">
                 <h3>{{ $houses->title }}</h3>
                 <span class="d-block mb-3"><i class="fas fa-map-marker-alt fa-xs pe-2"></i>{{$houses->city}}, {{$houses->lgas->local_name}}, {{$houses->states->name}}</span>
-                <span class="price font-xll text-primary d-block">₦{{ $houses->price }}</span>
-                <span class="sub-price font-lg text-dark d-block"><b>{{ $houses->area }}/Sqft </b> </span>
+                @if(isset($houses->sale_price))
+                    <span class="price font-xll text-primary d-block"><b class="text-dark">Sale Price: </b>₦{{ $houses->sale_price }}</span>
+                @else
+                    <span class="price font-xll text-primary d-block"><b class="text-dark">Rent Price: </b>₦{{ $houses->price }}</span>
+                @endif
+                <span class="sub-price font-lg text-dark d-block"><b>{{ $houses->area }} </b> </span>
                 <ul class="property-detail-meta list-unstyled ">
                   {{-- <li><a href="#"> <i class="fas fa-star text-warning pe-2"></i>3.9/5 </a></li> --}}
                   <li class="share-box">
@@ -149,8 +156,11 @@ Breadcrumb -->
                     <div class="col-sm-6">
                       <ul class="property-list list-unstyled">
                         {{-- <li><b>Property ID:</b> RV151</li> --}}
-                        <li><b>Rented Price Per Month:</b> ₦{{ $houses->price }}</li>
-                        <li><b>Sale Price:</b> ₦{{ $houses->sale_price }}</li>
+                        @if(isset($houses->sale_price))
+                            <li><b>Sale Price:</b> ₦{{ $houses->sale_price }}</li>
+                        @else
+                            <li><b>Rented Price:</b> ₦{{ $houses->price }}</li>
+                        @endif
                         <li><b>Property Size:</b> {{ $houses->area ?? 'N/A' }} </li>
                         <li><b>Bedrooms:</b> {{ $houses->rooms ?? 'N/A' }}</li>
                       </ul>
