@@ -215,7 +215,7 @@ breadcrumb -->
                     @else
                         <span class="text-primary">₦{{ $re->price }} </span>
                     @endif
-                  <a class="address mb-2" href="{{ url('single/'.$re->id) ?? ''}}">{{ $re->status->name }}</a>
+                  <a class="address mb-2" href="{{ url('single/'.$re->id) }}">{{ $re->status->name ?? ''}}</a>
                 </div>
               </div>
               @endforeach
