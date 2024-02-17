@@ -206,7 +206,7 @@ breadcrumb -->
               @foreach ($recent as $re )
               <hr class="mt-2 mb-2 mb-sm-2 mt-sm-2">
               <div class="recent-list-item">
-                <a href="{{ url('single/'.$re->id) }}"><img class="img-fluid" src="/{{ $re->images[0]->img_url?? 'no image' }}" style="width: 100px; height:100px" alt=""></a>
+                <a href="{{ url('single/'.$re->id) }}"><img class="img-fluid" src="/{{ $re->images[0]->img_url?? 'no image' }}" style="width: 100px;" alt=""></a>
                 <div class="recent-list-item-info">
                   <a class="address mb-2" href="{{ url('single/'.$re->id) }}">{{ $re->title }}</a>
                   {{-- <span class="text-primary">₦{{ $re->price }} </span> --}}
@@ -215,7 +215,7 @@ breadcrumb -->
                     @else
                         <span class="text-primary">₦{{ $re->price }} </span>
                     @endif
-                  <a class="address mb-2" href="{{ url('single/'.$re->id) }}">{{ $re->status->name }}</a>
+                  {{-- <a class="address mb-2" href="{{ url('single/'.$re->id) }}">{{ $re->status->name }}</a> --}}
                 </div>
               </div>
               @endforeach
