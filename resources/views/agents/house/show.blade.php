@@ -107,7 +107,7 @@
                                 <div class="row">
                                     @foreach($house->images as $image)
                                     <div class="col-md-3">
-                                        <img class="img-fluid" src="{{ asset($image->img_url) }}" style="width: 600px; height:300px " alt="">
+                                        <img class="img-fluid" src="{{ asset($image->img_url) ?? '' }}" style="width: 600px; height:300px " alt="">
                                     </div>
                                     @endforeach
                                 </div>
@@ -120,7 +120,7 @@
                                 <label for="image" class="image">Property Features</label>
                                 <div class="d-flex">
                                     @foreach ($houseFeature->house_features as $feature)
-                                        <h5 class="mr-2">{{ $feature->feature->name }}, </h5>
+                                        <h5 class="mr-2">{{ $feature->feature->name ?? ''}}, </h5>
                                     @endforeach
                                 </div>
                             </div>
