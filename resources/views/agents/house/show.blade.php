@@ -117,10 +117,10 @@
                        <div class="row py-3">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <div class="checkbox checkbox-primary">
-                                    @foreach ($features as $feature)
-                                        <input type="checkbox" name="features[]" value="{{ $feature->id }}" id="feature-{{ $feature->id }}">
-                                        <label for="feature-{{ $feature->id }}">{{ $feature->name }}</label>
+                                <label for="image" class="image">Property Features</label>
+                                <div class="d-flex">
+                                    @foreach ($houseFeature->house_features as $feature)
+                                        <h5 class="mr-2">{{ $feature->feature->name }}, </h5>
                                     @endforeach
                                 </div>
                             </div>

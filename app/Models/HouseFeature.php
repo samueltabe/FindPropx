@@ -10,9 +10,11 @@ class HouseFeature extends Model
     use HasFactory;
     protected $guarded = [];
 
-    public function features()
+    public function feature()
 
     {
-        return $this->belongsTo(House::class);
+        return $this->belongsTo(Feature::class);
     }
+
+
 }

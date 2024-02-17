@@ -99,6 +99,8 @@ class FrontendController extends Controller
         ->take(3)
         ->get();
         $features = Feature::all();
+        $houseFeature = House::where('id', $id)->with('house_features.feature')->first();
+        // return $houseFeature;
         $houseUrl = route('house.show', ['id' => $houses->id]);
         $shareComponent = \Share::page(
           $houseUrl,
@@ -111,7 +113,7 @@ class FrontendController extends Controller
         ->whatsapp()
         ->reddit();
 
-        return view('single', compact('houses', 'house', 'type', 'features', 'shareComponent'));
+        return view('single', compact('houses', 'house', 'type', 'features', 'houseFeature', 'shareComponent'));
     }
 
     public function about()

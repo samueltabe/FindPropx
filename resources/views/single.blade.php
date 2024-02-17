@@ -214,15 +214,14 @@ Breadcrumb -->
                 </div>
                 <div class="col-sm-9">
                   <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                       <ul class="property-list-style-2 list-unstyled mb-0">
-                        @foreach ($features as $feature)
-                        <li>{{ $feature->name }}</li>
+                        @foreach ($houseFeature->house_features as $feature)
+                           <li>{{ $feature->feature->name }}</li>
                       </ul>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                       <ul class="property-list-style-2 list-unstyled mb-0">
-
                         @endforeach
                       </ul>
                     </div>
@@ -526,7 +525,7 @@ Breadcrumb -->
         <div class="col-md-4">
           <div class="property-item">
             <div class="property-image bg-overlay-gradient-04">
-              <img class="img-fluid" src="/{{ $ty->images[0]->img_url?? 'no image' }}" style="height: 300px" alt="">
+              <img class="img-fluid" src="/{{ $ty->images[0]->img_url?? 'no image' }}" style="height: 300px; width: 500px" alt="">
               <div class="property-lable">
                 {{-- <span class="badge badge-md bg-primary">Bungalow</span>
                 <span class="badge badge-md bg-info">Sal </span> --}}

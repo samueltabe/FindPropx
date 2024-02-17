@@ -48,6 +48,11 @@ class House extends Model
         return $this->hasMany(Feature::class);
     }
 
+    public function house_features()
+    {
+        return $this->hasMany(HouseFeature::class);
+    }
+
     public function types()
     {
         return $this->belongsTo(Type::class, 'type_id', 'id');

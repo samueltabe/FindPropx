@@ -12,11 +12,13 @@ class Feature extends Model
 
     public function house()
     {
-        return $this ->belongsTo(House::class);
+        return $this ->belongsToMany(House::class);
     }
 
-    public function houseFeatures()
-    {
-        return $this->hasMany(HouseFeature::class);
-    }
+    // public function houses()
+    // {
+    //     return $this->belongsToMany(House::class, 'house_feature', 'feature_id', 'house_id');
+    // }
+
+
 }

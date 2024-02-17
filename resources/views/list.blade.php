@@ -204,11 +204,18 @@ breadcrumb -->
                 <h6>Recently listed properties</h6>
               </div>
               @foreach ($recent as $re )
+              <hr class="mt-2 mb-2 mb-sm-2 mt-sm-2">
               <div class="recent-list-item">
-                <img class="img-fluid" src="/{{ $re->images[0]->img_url?? 'no image' }}" style="width: 100px; " alt="">
+                <a href="{{ url('single/'.$re->id) }}"><img class="img-fluid" src="/{{ $re->images[0]->img_url?? 'no image' }}" style="width: 100px; height:100px" alt=""></a>
                 <div class="recent-list-item-info">
-                  <a class="address mb-2" href="property-detail-style-01.html">{{ $re->title }}</a>
+                  <a class="address mb-2" href="{{ url('single/'.$re->id) }}">{{ $re->title }}</a>
                   {{-- <span class="text-primary">₦{{ $re->price }} </span> --}}
+                    @if(isset($re->sale_price))
+                        <span class="text-primary">₦{{ $re->sale_price }} </span>
+                    @else
+                        <span class="text-primary">₦{{ $re->price }} </span>
+                    @endif
+                  <a class="address mb-2" href="{{ url('single/'.$re->id) }}">{{ $re->status->name }}</a>
                 </div>
               </div>
               @endforeach
