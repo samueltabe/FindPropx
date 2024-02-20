@@ -43,7 +43,7 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/agents/house/edit/{id}', [App\Http\Controllers\AgentController::class, 'HouseEdit']);
     Route::get('/agents/house/show/{id}', [App\Http\Controllers\AgentController::class, 'HouseShow']);
     Route::put('/agents/house/update/{id}', [App\Http\Controllers\AgentController::class, 'HouseUpdate']);
-    Route::get('/agent/house/delete/{id}', [App\Http\Controllers\AgentController::class, 'HouseDelete']);
+    Route::get('/agent/house/delete/{id}', [App\Http\Controllers\AgentController::class, 'HouseDelete'])->name('delete-house');
 });
 
 

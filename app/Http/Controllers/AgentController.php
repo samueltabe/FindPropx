@@ -195,17 +195,26 @@ class AgentController extends Controller
         return redirect('/agents/house')->with('message', 'House details successfully Added');
     }
 
+
     public function HouseDelete($id)
     {
         $house = House::find($id);
-        $destination = 'upload/house/images'.$house->image;
-        if(File::exists($destination)){
 
-            File::delete($destination);
+        if ($house) {
+            foreach ($house->images as $image) {
+                $destination = public_path('upload/house/images/' . $image->img_url);
+                if (File::exists($destination)) {
+                    File::delete($destination);
+                }
 
+                $image->delete();
+            }
+
+            $house->delete();
+
+            return redirect('/agents/house')->with('message', 'House details and images successfully deleted');
         }
-        $house->images()->forceDelete();
-        $house->delete();
-        return redirect('/agent/house')->with('message', 'House details successfully Deleted');
+
+        return redirect('/agents/house')->with('message', 'House not found');
     }
 }

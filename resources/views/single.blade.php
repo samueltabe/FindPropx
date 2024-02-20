@@ -237,10 +237,10 @@ Breadcrumb -->
                 </div>
                 <div class="col-sm-9">
                   <div class="row">
-                    <div class="col-sm-6">
+                    <div class="col-sm-12">
                       <ul class="property-list list-unstyled mb-0">
-                        <li><b>City:</b> {{$houses->city}}</li>
-                        <li><b>LGA:</b> {{$houses->lgas->local_name}}</li>
+                        <li ><b >City:</b>{{$houses->city}}</li>
+                        <li><b>LGA:</b>{{$houses->lgas->local_name}}</li>
                         <li><b>State:</b>{{$houses->states->name}}</li>
                         {{-- <li><b>Area:</b> Embarcadero</li> --}}
                       </ul>

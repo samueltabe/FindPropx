@@ -55,7 +55,7 @@
                                         <td>
                                             <a href="{{ url('agents/house/show/'.$hou->id) }}" class="btn btn-outline-success"><i class="ion ion-md-eye"></i></a>
                                             <a href="{{ url('agents/house/edit/'.$hou->id) }}" class="btn btn-outline-primary"><i class="mdi mdi-account-edit-outline"></i></a>
-                                            <a href="{{ url('agent/house/delete/'.$hou->id) }}" class="btn btn-outline-danger"><i class="mdi mdi-delete"></i></a>
+                                            <a href="{{ route('delete-house', ['id' => $hou->id]) }}" class="btn btn-outline-danger"><i class="mdi mdi-delete"></i></a>
                                         </td>
                                     </tr>
                                     @empty
