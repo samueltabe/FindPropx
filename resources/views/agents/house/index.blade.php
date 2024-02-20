@@ -44,7 +44,7 @@
 
                                     <tr>
                                         <td>
-                                            <img src="/{{ $hou->images[0]->img_url?? 'no image' }}" width="50" alt="">
+                                            <img src="/{{ $hou->images[0]->img_url?? 'no image' }}" height="60" width="60" alt="">
                                         </td>
                                         <td>{{ $hou->title }}</td>
                                         <td>{{ $hou->types->name }}</td>
