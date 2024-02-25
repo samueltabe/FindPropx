@@ -3601,7 +3601,7 @@ button {
         .property-details .property-btn .property-listing-actions li a {
           -ms-flex-item-align: center;
               align-self: center;
-          color: #969696;
+          color: #E78C2D;
           padding: 12px 20px;
           background: transparent; }
           .property-details .property-btn .property-listing-actions li a:hover {
@@ -3615,11 +3615,11 @@ button {
       padding: 15px;
       font-size: 15px;
       text-align: center;
-      background: #fafafa;
-      color: #001935; }
+      background: #E78C2D;
+      color: #ffff; }
       .property-details .property-btn a:hover {
-        background: #E78C2D;
-        color: #ffffff; }
+        background: #ebdccc;
+        color: #1d1c1c; }
 
 .property-filter-tag {
   display: -webkit-box;
