@@ -227,7 +227,7 @@ Featured properties-->
               <span class="property-trending" title="trending"><i class="fas fa-bolt"></i></span>
               <div class="property-agent">
                 <div class="property-agent-image">
-                  <img class="img-fluid" src="{{ asset('upload/admin/images/'.$house->users->image)?? '' }}" alt="">
+                  <img class="img-fluid" src="{{ asset('upload/admin/images/'.$house->users->image)?? '' }}" alt="" style="width: 50px; height:35px">
                 </div>
                 <div class="property-agent-info">
                   <a class="property-agent-name" href="#">{{$house->users->name}}</a>
@@ -317,41 +317,49 @@ Featured properties-->
                 <div class="row g-0">
                   <div class="col-lg-6">
                     <div class="property-image bg-overlay-gradient-04">
-                      <img class="img-fluid" src="/{{ $house->images[0]->img_url?? 'no image' }}" style="height: 500px" alt="">
+                      <img class="img-fluid" src="/{{ $house->images[0]->img_url?? 'no image' }}" style="height: 500px; width: 600px" alt="">
                       <div class="property-lable">
-                        <span class="badge badge-md bg-primary">Studio</span>
-                        <span class="badge badge-md bg-info">New </span>
+                        <span class="badge badge-md bg-primary">{{ $house->types->name }}</span>
+                        <span class="badge badge-md bg-info">{{ $house->status->name }}</span>
                       </div>
                       <div class="property-agent">
                         <div class="property-agent-image">
-                          <img class="img-fluid" src="images/avatar/06.jpg" alt="">
+                          <img class="img-fluid" src="{{ asset('upload/admin/images/'.$house->users->image)?? '' }}" alt="" style="width: 50px; height:35px">
                         </div>
                         <div class="property-agent-info">
-                          <a class="property-agent-name" href="#">Michael Bean</a>
-                          <span class="d-block">Research</span>
+                          <a class="property-agent-name" href="#">{{$house->users->name}}</a>
+                          {{-- <span class="d-block">Research</span> --}}
                           <ul class="property-agent-contact list-unstyled">
-                            <li><a href="#"><i class="fas fa-mobile-alt"></i> </a></li>
-                            <li><a href="#"><i class="fas fa-envelope"></i> </a></li>
+                            @php
+                                $phoneNumber = preg_replace('/[^0-9]/', '', $house->users->phone);
+                            @endphp
+                            <li><a href="tel:{{ $phoneNumber }}"><i class="fas fa-mobile-alt"></i> </a></li>
+                            <li><a href="mailto:{{ $house->users->email }}"><i class="fas fa-envelope"></i> </a></li>
                           </ul>
                         </div>
                       </div>
                       <div class="property-agent-popup">
-                        <a href="#"><i class="fas fa-camera"></i> 02</a>
+                        {{-- <a href="#"><i class="fas fa-camera"></i> 02</a> --}}
                       </div>
                     </div>
                   </div>
                   <div class="col-lg-6">
                     <div class="property-details pt-4">
                       <div class="property-details-inner">
-                        <h5 class="property-title"><a href="property-detail-style-01.html">184 lexington avenue</a></h5>
-                        <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>Hamilton rd. willoughby, oh</span>
-                        <span class="property-agent-date"><i class="far fa-clock fa-md"></i>3 years ago</span>
-                        <p class="mb-0 mt-3">The first thing to remember about success is that it is a process – nothing more, nothing less. There is really no magic to it.</p>
-                        <div class="property-price">$236.00<span> / month</span> </div>
+                        <h5 class="property-title"><a href="{{ url('single/'.$house->id) }}">{{ $house->lgas->local_name }}</a></h5>
+                        <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>{{  $house->states->name }}</span>
+                        <span class="property-agent-date"><i class="far fa-clock fa-md"></i>{{$house->created_at->diffForHumans()}}</span>
+                        <p class="mb-0 mt-3">{{ $house->description }}</p>
+                        {{-- <div class="property-price">$236.00<span> / month</span> </div> --}}
+                        @if(isset($house->sale_price))
+                            <div class="property-price">₦{{ $house->sale_price }}<span> / asking price</span> </div>
+                        @else
+                            <div class="property-price">₦{{ $house->price }}<span> / month</span> </div>
+                        @endif
                         <ul class="property-info list-unstyled d-flex">
-                          <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>2</span></li>
-                          <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
-                          <li class="flex-fill property-m-sqft"><i class="far fa-square"></i>sqft<span>3,657m</span></li>
+                          <li class="flex-fill property-bed"><i class="fas fa-bed"></i><span>{{ $house->rooms }}</span></li>
+                          {{-- <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li> --}}
+                          <li class="flex-fill property-m-sqft"><i class="far fa-square"></i><span>{{ $house->area }}</span></li>
                         </ul>
                         <div class="property-countdown mt-4 mb-3 mb-lg-0">
                           <h5 class="mb-3">Deal ends in: </h5>
@@ -374,7 +382,7 @@ Featured properties-->
                         </div>
                       </div>
                       <div class="property-btn">
-                        <a class="property-link" href="property-detail-style-01.html">See Details</a>
+                        <a class="property-link" href="{{ url('single/'.$house->id) }}">See Details</a>
                         <ul class="property-listing-actions list-unstyled mb-0">
                           <li class="property-compare"><a data-bs-toggle="tooltip" data-bs-placement="top" title="Compare" href="#"><i class="fas fa-exchange-alt"></i></a></li>
                           <li class="property-favourites"><a data-bs-toggle="tooltip" data-bs-placement="top" title="Favourite" href="#"><i class="far fa-heart"></i></a></li>

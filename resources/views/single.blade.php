@@ -304,11 +304,8 @@ Breadcrumb -->
                   </div>
                   <div class="col-sm-9">
                     <div class="embed-responsive embed-responsive-16by9">
-                      {{-- <iframe width="546" height="315" src="https://www.youtube.com/embed/Mgsm4RaXYpM?si=aIZcMzsq12dlKh9Y" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                       --}}
-
-
-                       <iframe width="560" height="315" src="{{$houses->video ?? 'No Video'}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                       {{-- <iframe width="560" height="315" src="{{$houses->video ?? 'No Video'}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> --}}
+                       {!! $houses->video ?? 'No Video' !!}
                     </div>
                   </div>
                 </div>
@@ -558,7 +555,13 @@ Breadcrumb -->
                 <h5 class="property-title"><a href="{{ url('single/'.$ty->id) }}">{{ $ty->title }} </a></h5>
                 <span class="property-address"><i class="fas fa-map-marker-alt fa-xs"></i>{{ $ty->lgas->local_name }}, {{ $ty->states->name }}</span>
                 <span class="property-agent-date"><i class="far fa-clock fa-md"></i>{{ $ty->created_at->diffForHumans() }}</span>
-                <div class="property-price">₦{{ $ty->price }}<span> / month</span> </div>
+                {{-- <div class="property-price">₦{{ $ty->price }}<span> / month</span> </div> --}}
+                @if(isset($houses->sale_price))
+                  <div class="property-price">₦{{ $ty->sale_price }}<span> / month</span> </div>
+                @else
+                  <div class="property-price">₦{{ $ty->price }}<span> / month</span> </div>
+                @endif
+
                 {{-- <ul class="property-info list-unstyled d-flex">
                   <li class="flex-fill property-bed"><i class="fas fa-bed"></i>Bed<span>1</span></li>
                   <li class="flex-fill property-bath"><i class="fas fa-bath"></i>Bath<span>2</span></li>
